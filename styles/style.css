@@ -1,0 +1,414 @@
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700;800&family=Inter:wght@400;600&display=swap");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  /* background: #f5f5f5; */
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+input {
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+.definitions {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.definitions-title {
+  color: #363b40;
+  font-family: Geologica;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.8px;
+  margin-bottom: 54px;
+}
+
+.definitions-title-span {
+  color: #1679c6;
+}
+
+.definitions-content {
+  width: 45%;
+}
+
+.definitions-calculator-desc {
+  color: #363b40;
+  font-family: Geologica;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.definitions-calculator-categories {
+  display: inline-flex;
+  border-radius: 50px;
+  background: #eff2f5;
+  margin-bottom: 60px;
+}
+
+.definitions-calculator-categories-button {
+  color: #363b40;
+  text-align: center;
+  font-family: Geologica;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 23.4px */
+  padding: 15px 30px;
+  border-radius: 50px;
+  transition: background 250ms linear;
+}
+
+.definitions-calculator-categories-button.active {
+  background: #dde6f5;
+}
+
+.definitions-calculator-developer {
+  display: block;
+}
+
+.definitions-calculator-developer.active {
+  display: none;
+}
+
+.definitions-calculator-consumer {
+  display: none;
+}
+
+.definitions-calculator-consumer.active {
+  display: block;
+}
+
+.definitions-calculator-block {
+  margin-bottom: 80px;
+}
+
+.definitions-calculator-title {
+  color: #363b40;
+  font-family: Geologica;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  margin-bottom: 20px;
+}
+
+.definitions-calculator-input {
+  position: relative;
+  width: 100%;
+}
+
+.definitions-calculator-input-range {
+  position: relative;
+  appearance: none;
+  width: 100%;
+
+  border-radius: 63.136px;
+  height: 16px;
+}
+
+.definitions-calculator-input-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 25px;
+  left: var(--track1-value, 50%);
+  transform: translate(-50%);
+
+  width: 105px;
+  height: 58px;
+
+  filter: drop-shadow(0px 2px 14px rgba(0, 0, 0, 0.1));
+  background-image: url("../images/range-value.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.definitions-calculator-input-value-text {
+  color: #363b40;
+  text-align: center;
+  font-family: Geologica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  margin-top: 5px;
+}
+
+.definitions-calculator-input-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background: #72bf44;
+  border-radius: 50%;
+  border: 9px solid white;
+}
+
+.definitions-calculator-input-min {
+  position: absolute;
+  top: 20px;
+  left: 0;
+
+  color: #363b40;
+  text-align: center;
+  font-family: Geologica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+}
+
+.definitions-calculator-input-max {
+  position: absolute;
+  top: 20px;
+  right: 0;
+
+  color: #363b40;
+  text-align: center;
+  font-family: Geologica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+}
+
+.balon {
+  display: flex;
+  flex-direction: column;
+}
+.balon-icon {
+  width: 161px;
+  height: 125px;
+}
+
+.balon-block {
+  position: relative;
+  width: 161px;
+  height: 539px;
+  border-radius: 56px 56px 20px 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #eff2f5;
+}
+
+.balon-block-fill {
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, #85dc54 0%, #72bf44 100%), #72bf44;
+}
+
+.balon-block-content {
+  margin-top: 30px;
+}
+
+.balon-block-content-value {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.balon-block-content-text {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.charge {
+  display: flex;
+  flex-direction: column;
+}
+.charge-icon-up {
+  width: 90px;
+  height: 11px;
+  margin: 0 auto;
+  margin-bottom: -3px;
+}
+.charge-icon-down {
+  width: 90px;
+  height: 15px;
+  margin: 0 auto;
+  margin-top: -10px;
+  background: #73c045;
+  border-radius: 2px;
+}
+
+.charge-block {
+  position: relative;
+  width: 161px;
+  height: 645px;
+  border-radius: 45px 45px 45px 45px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #eff2f5;
+}
+
+.charge-block-fill {
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, #85dc54 0%, #72bf44 100%), #72bf44;
+}
+
+.charge-block-content {
+  margin-top: 30px;
+}
+
+.charge-block-content-value {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.charge-block-content-text {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-block {
+  position: relative;
+  width: 161px;
+  height: 663px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.price-block-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(359deg, #1679c6 0%, #5d94dc 100%),
+    linear-gradient(359deg, #1c55b7 0%, #5d94dc 100%), #3971c8;
+}
+
+.price-block-content {
+  margin-top: 30px;
+}
+
+.price-block-content-value {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.price-block-content-text {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.definitions-graph {
+  display: flex;
+  gap: 80px;
+  justify-content: space-between;
+}
+.definitions-graph-developer {
+  display: flex;
+  gap: 80px;
+  justify-content: space-between;
+}
+
+.definitions-graph-developer.active {
+  display: none;
+}
+
+.definitions-graph-consumer {
+  display: none;
+  gap: 80px;
+  justify-content: space-between;
+}
+
+.definitions-graph-consumer.active {
+  display: flex;
+}
+
+.definitions-graph-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.definitions-graph-item-desc {
+  color: #363b40;
+  text-align: center;
+  font-family: Geologica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 26px */
+  max-width: 182px;
+}

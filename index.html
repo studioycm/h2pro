@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="definitions">
+      <div class="definitions-content">
+        <h1 class="definitions-title">
+          Our breakthrough
+          <span class="definitions-title-span">95% energy efficiency</span> is
+          the step change we need to make green hydrogen a reality
+        </h1>
+
+        <div class="definitions-calculator">
+          <p class="definitions-calculator-desc">Сalculate for</p>
+
+          <div class="definitions-calculator-categories">
+            <button class="definitions-calculator-categories-button active">
+              Renewables Developer
+            </button>
+            <button class="definitions-calculator-categories-button">
+              Industrial Consumer
+            </button>
+          </div>
+
+          <div class="definitions-calculator-developer">
+            <div class="definitions-calculator-block">
+              <p class="definitions-calculator-title">Size of electrolyzer</p>
+
+              <div class="definitions-calculator-input">
+                <p class="definitions-calculator-input-min">100 MW</p>
+                <input
+                  type="range"
+                  class="definitions-calculator-input-range"
+                  min="100"
+                  max="1000"
+                  id="track1"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #72be44 0%,
+                      #8bdf59 50%,
+                      #eff2f5 50%,
+                      #eff2f5 100%
+                    );
+                  "
+                />
+                <div class="definitions-calculator-input-value">
+                  <p class="definitions-calculator-input-value-text">500 MW</p>
+                </div>
+                <p class="definitions-calculator-input-max">1 GW</p>
+              </div>
+            </div>
+
+            <div class="definitions-calculator-block">
+              <p class="definitions-calculator-title">
+                Electrolyzer capacity factor
+              </p>
+
+              <div class="definitions-calculator-input">
+                <p class="definitions-calculator-input-min">10%</p>
+                <input
+                  type="range"
+                  class="definitions-calculator-input-range"
+                  min="0"
+                  max="100"
+                  id="track2"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #72be44 0%,
+                      #8bdf59 50%,
+                      #eff2f5 50%,
+                      #eff2f5 100%
+                    );
+                  "
+                />
+                <div class="definitions-calculator-input-value">
+                  <p class="definitions-calculator-input-value-text">50%</p>
+                </div>
+                <p class="definitions-calculator-input-max">100%</p>
+              </div>
+            </div>
+
+            <div class="definitions-calculator-block">
+              <p class="definitions-calculator-title">Hydrogen retail price</p>
+
+              <div class="definitions-calculator-input">
+                <p class="definitions-calculator-input-min">$1 / kg</p>
+                <input
+                  type="range"
+                  class="definitions-calculator-input-range"
+                  min="0"
+                  max="10"
+                  id="track3"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #72be44 0%,
+                      #8bdf59 50%,
+                      #eff2f5 50%,
+                      #eff2f5 100%
+                    );
+                  "
+                />
+                <div class="definitions-calculator-input-value">
+                  <p class="definitions-calculator-input-value-text">50%</p>
+                </div>
+                <p class="definitions-calculator-input-max">$10 / kg</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="definitions-calculator-consumer">
+            <div class="definitions-calculator-block">
+              <p class="definitions-calculator-title">Hydrogen to produce</p>
+
+              <div class="definitions-calculator-input">
+                <p class="definitions-calculator-input-min">10%</p>
+                <input
+                  type="range"
+                  class="definitions-calculator-input-range"
+                  min="0"
+                  max="100"
+                  id="track2"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #72be44 0%,
+                      #8bdf59 50%,
+                      #eff2f5 50%,
+                      #eff2f5 100%
+                    );
+                  "
+                />
+                <div class="definitions-calculator-input-value">
+                  <p class="definitions-calculator-input-value-text">50%</p>
+                </div>
+                <p class="definitions-calculator-input-max">100%</p>
+              </div>
+            </div>
+
+            <div class="definitions-calculator-block">
+              <p class="definitions-calculator-title">Cost of electricity</p>
+
+              <div class="definitions-calculator-input">
+                <p class="definitions-calculator-input-min">100 MW</p>
+                <input
+                  type="range"
+                  class="definitions-calculator-input-range"
+                  min="100"
+                  max="1000"
+                  id="track1"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #72be44 0%,
+                      #8bdf59 50%,
+                      #eff2f5 50%,
+                      #eff2f5 100%
+                    );
+                  "
+                />
+                <div class="definitions-calculator-input-value">
+                  <p class="definitions-calculator-input-value-text">500 MW</p>
+                </div>
+                <p class="definitions-calculator-input-max">1 GW</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="definitions-graph">
+        <div class="definitions-graph-developer">
+          <div class="definitions-graph-item">
+            <div class="balon">
+              <img class="balon-icon" src="./images/balon.svg" />
+              <div class="balon-block">
+                <div class="balon-block-fill" id="el-convetional">
+                  <div class="balon-block-content">
+                    <p class="balon-block-content-value" id="value-convetional">
+                      81
+                    </p>
+                    <p class="balon-block-content-text">kg H2</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="definitions-graph-item-desc">Conventional electrolysis</p>
+          </div>
+          <div class="definitions-graph-item">
+            <div class="balon">
+              <img class="balon-icon" src="./images/balon.svg" />
+              <div class="balon-block">
+                <div class="balon-block-fill" id="el-etac">
+                  <div class="balon-block-content">
+                    <p class="balon-block-content-value" id="value-etac">104</p>
+                    <p class="balon-block-content-text">kg H2</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="definitions-graph-item-desc">E-TAC electrolysis</p>
+          </div>
+          <div class="definitions-graph-item">
+            <div class="price">
+              <div class="price-block">
+                <div class="price-block-fill" id="el-profits">
+                  <div class="price-block-content">
+                    <p class="price-block-content-value" id="value-profits">
+                      $493
+                    </p>
+                    <p class="price-block-content-text">saved</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="definitions-graph-item-desc">E-TAC electricity savings</p>
+          </div>
+        </div>
+        <div class="definitions-graph-consumer">
+          <div class="definitions-graph-item">
+            <div class="charge">
+              <img class="charge-icon-up" src="./images/charge-1.svg" />
+              <img class="charge-icon-up" src="./images/charge-2.svg" />
+              <div class="charge-block">
+                <div class="charge-block-fill" style="height: 70%">
+                  <div class="charge-block-content">
+                    <p class="charge-block-content-value">300</p>
+                    <p class="charge-block-content-text">kg H2</p>
+                  </div>
+                </div>
+              </div>
+              <div class="charge-icon-down"></div>
+            </div>
+
+            <p class="definitions-graph-item-desc">Conventional electrolysis</p>
+          </div>
+          <div class="definitions-graph-item">
+            <div class="charge">
+              <img class="charge-icon-up" src="./images/charge-1.svg" />
+              <img class="charge-icon-up" src="./images/charge-2.svg" />
+              <div class="charge-block">
+                <div class="charge-block-fill" style="height: 70%">
+                  <div class="charge-block-content">
+                    <p class="charge-block-content-value">300</p>
+                    <p class="charge-block-content-text">kg H2</p>
+                  </div>
+                </div>
+              </div>
+              <div class="charge-icon-down"></div>
+            </div>
+
+            <p class="definitions-graph-item-desc">E-TAC electrolysis</p>
+          </div>
+          <div class="definitions-graph-item">
+            <div class="price">
+              <div class="price-block">
+                <div class="price-block-fill">
+                  <div class="price-block-content">
+                    <p class="price-block-content-value">$3000</p>
+                    <p class="price-block-content-text">saved</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="definitions-graph-item-desc">E-TAC electricity savings</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/switch-button.js"></script>
+    <script src="./js/range-slider.js"></script>
+    <script src="./js/calculator.js"></script>
+  </body>
+</html>
