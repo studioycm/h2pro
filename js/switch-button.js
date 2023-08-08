@@ -19,11 +19,24 @@ const switchButtons = ({ target }) => {
     item.classList.remove("active");
   });
 
-  calculatorDeveloper.classList.toggle("active");
-  calculatorConsumer.classList.toggle("active");
-  graphDeveloper.classList.toggle("active");
-  graphConsumer.classList.toggle("active");
   target.classList.add("active");
+
+  if (buttons.children[0].classList.contains("active")) {
+    calculatorDeveloper.classList.remove("active");
+    calculatorConsumer.classList.remove("active");
+
+    graphDeveloper.classList.remove("active");
+    graphConsumer.classList.remove("active");
+  } else {
+    if (calculatorDeveloper.classList.contains("active")) {
+    } else {
+      calculatorDeveloper.classList.add("active");
+      calculatorConsumer.classList.add("active");
+
+      graphDeveloper.classList.add("active");
+      graphConsumer.classList.add("active");
+    }
+  }
 };
 
 buttons.addEventListener("click", switchButtons);
