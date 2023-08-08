@@ -8,9 +8,16 @@ const rangeSlider = (element, min, max, meaning = "%") => {
 
   element.parentElement.children[2].style.left = `${currentValue}%`;
   element.parentElement.children[3].style.left = `${currentValue}%`;
-  element.parentElement.children[2].children[0].innerText = `${Number(
-    element.value
-  )}${meaning}`;
+
+  if (meaning === "kg") {
+    element.parentElement.children[2].children[0].innerText = `$${Number(
+      element.value
+    )} / kg`;
+  } else {
+    element.parentElement.children[2].children[0].innerText = `${Number(
+      element.value
+    )}${meaning}`;
+  }
 };
 
 document
