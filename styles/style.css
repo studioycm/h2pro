@@ -217,11 +217,22 @@ input {
 
 .definitions-calculator-input-range::-webkit-slider-thumb {
   appearance: none;
+  width: 1px;
+  height: 15px;
+}
+
+.definitions-calculator-input-range-slider {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 30px;
   height: 30px;
   background: #72bf44;
   border-radius: 50%;
   border: 9px solid white;
+  box-sizing: border-box;
 }
 
 .definitions-calculator-input-min {

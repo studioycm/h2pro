@@ -1,16 +1,13 @@
 const rangeSlider = (element, min, max, meaning = "%") => {
-  // const currentValue = (Number(element.value) / max) * 100;
-  const currentValue = (
-    ((Number(element.value) - min) / (max - min)) *
-    100
-  ).toFixed(2);
+  const currentValue = ((Number(element.value) - min) / (max - min)) * 100;
 
   const backgroundLinear = `
     linear-gradient(to right, rgb(114, 190, 68) 0%, rgb(139, 223, 89) ${currentValue}%, rgb(239, 242, 245) ${currentValue}%, rgb(239, 242, 245) 100%)`;
 
   element.style.background = backgroundLinear;
 
-  element.parentElement.children[2].style.left = `${currentValue}px`;
+  element.parentElement.children[2].style.left = `${currentValue}%`;
+  element.parentElement.children[3].style.left = `${currentValue}%`;
   element.parentElement.children[2].children[0].innerText = `${Number(
     element.value
   )}${meaning}`;
@@ -19,7 +16,7 @@ const rangeSlider = (element, min, max, meaning = "%") => {
 document
   .getElementById("track1")
   .addEventListener("input", ({ target }) =>
-    rangeSlider(target, 100, 1050, "MW")
+    rangeSlider(target, 100, 1000, "MW")
   );
 
 document
