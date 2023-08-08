@@ -25,3 +25,15 @@ document
 document
   .getElementById("track3")
   .addEventListener("input", ({ target }) => rangeSlider(target, 0, 10, "kg"));
+
+document
+  .getElementById("track4")
+  .addEventListener("input", ({ target }) =>
+    rangeSlider(target, 10, 200, "MW")
+  );
+
+document
+  .getElementById("track5")
+  .addEventListener("input", ({ target }) =>
+    rangeSlider(target, 10, 100, "kWh")
+  );

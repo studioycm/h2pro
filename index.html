@@ -108,7 +108,7 @@
                   "
                 />
                 <div class="definitions-calculator-input-value">
-                  <p class="definitions-calculator-input-value-text">50%</p>
+                  <p class="definitions-calculator-input-value-text">5kg</p>
                 </div>
                 <p class="definitions-calculator-input-max">$10 / kg</p>
               </div>
@@ -120,13 +120,13 @@
               <p class="definitions-calculator-title">Hydrogen to produce</p>
 
               <div class="definitions-calculator-input">
-                <p class="definitions-calculator-input-min">10%</p>
+                <p class="definitions-calculator-input-min">10MW</p>
                 <input
                   type="range"
                   class="definitions-calculator-input-range"
-                  min="0"
-                  max="100"
-                  id="track2"
+                  min="10"
+                  max="200"
+                  id="track4"
                   style="
                     background: linear-gradient(
                       to right,
@@ -138,9 +138,9 @@
                   "
                 />
                 <div class="definitions-calculator-input-value">
-                  <p class="definitions-calculator-input-value-text">50%</p>
+                  <p class="definitions-calculator-input-value-text">100MW</p>
                 </div>
-                <p class="definitions-calculator-input-max">100%</p>
+                <p class="definitions-calculator-input-max">200MW</p>
               </div>
             </div>
 
@@ -148,13 +148,13 @@
               <p class="definitions-calculator-title">Cost of electricity</p>
 
               <div class="definitions-calculator-input">
-                <p class="definitions-calculator-input-min">100 MW</p>
+                <p class="definitions-calculator-input-min">10 MW</p>
                 <input
                   type="range"
                   class="definitions-calculator-input-range"
-                  min="100"
-                  max="1000"
-                  id="track1"
+                  min="10"
+                  max="100"
+                  id="track5"
                   style="
                     background: linear-gradient(
                       to right,
@@ -166,9 +166,9 @@
                   "
                 />
                 <div class="definitions-calculator-input-value">
-                  <p class="definitions-calculator-input-value-text">500 MW</p>
+                  <p class="definitions-calculator-input-value-text">50 MW</p>
                 </div>
-                <p class="definitions-calculator-input-max">1 GW</p>
+                <p class="definitions-calculator-input-max">100 GW</p>
               </div>
             </div>
           </div>
@@ -231,9 +231,14 @@
               <img class="charge-icon-up" src="./images/charge-1.svg" />
               <img class="charge-icon-up" src="./images/charge-2.svg" />
               <div class="charge-block">
-                <div class="charge-block-fill" style="height: 70%">
+                <div class="charge-block-fill" id="el-convetional-consumer">
                   <div class="charge-block-content">
-                    <p class="charge-block-content-value">300</p>
+                    <p
+                      class="charge-block-content-value"
+                      id="value-convetional-consumer"
+                    >
+                      300
+                    </p>
                     <p class="charge-block-content-text">kg H2</p>
                   </div>
                 </div>
@@ -248,9 +253,14 @@
               <img class="charge-icon-up" src="./images/charge-1.svg" />
               <img class="charge-icon-up" src="./images/charge-2.svg" />
               <div class="charge-block">
-                <div class="charge-block-fill" style="height: 70%">
+                <div class="charge-block-fill" id="el-etac-consumer">
                   <div class="charge-block-content">
-                    <p class="charge-block-content-value">300</p>
+                    <p
+                      class="charge-block-content-value"
+                      id="value-etac-consumer"
+                    >
+                      300
+                    </p>
                     <p class="charge-block-content-text">kg H2</p>
                   </div>
                 </div>
@@ -263,9 +273,14 @@
           <div class="definitions-graph-item">
             <div class="price">
               <div class="price-block">
-                <div class="price-block-fill">
+                <div class="price-block-fill" id="el-profits-consumer">
                   <div class="price-block-content">
-                    <p class="price-block-content-value">$3000</p>
+                    <p
+                      class="price-block-content-value"
+                      id="value-profits-consumer"
+                    >
+                      $260
+                    </p>
                     <p class="price-block-content-text">saved</p>
                   </div>
                 </div>
