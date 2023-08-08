@@ -32,7 +32,7 @@ function calculateProfits(I2, I3, D4) {
   return result;
 }
 
-const calculatorDeveloper = () => {
+const calculateDeveloper = () => {
   const calcConvetionalValue = calculateConventional(
     Number(valueSize.value),
     Number(valueCapacity.value)
@@ -59,6 +59,6 @@ const calculatorDeveloper = () => {
   elProfits.style.height = `${(calcProfitsValue / 493) * 100}%`;
 };
 
-valueSize.addEventListener("input", calculatorDeveloper);
-valueCapacity.addEventListener("input", calculatorDeveloper);
-valueHydrogen.addEventListener("input", calculatorDeveloper);
+valueSize.addEventListener("input", calculateDeveloper);
+valueCapacity.addEventListener("input", calculateDeveloper);
+valueHydrogen.addEventListener("input", calculateDeveloper);
