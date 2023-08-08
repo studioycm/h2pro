@@ -236,6 +236,7 @@ input {
   width: 100%;
   height: 50%;
   background: linear-gradient(180deg, #85dc54 0%, #72bf44 100%), #72bf44;
+  transition: height 250ms linear;
 }
 
 .balon-block-content {
@@ -297,6 +298,7 @@ input {
   width: 100%;
   height: 50%;
   background: linear-gradient(180deg, #85dc54 0%, #72bf44 100%), #72bf44;
+  transition: height 250ms linear;
 }
 
 .charge-block-content {
@@ -344,6 +346,7 @@ input {
   height: 100%;
   background: linear-gradient(359deg, #1679c6 0%, #5d94dc 100%),
     linear-gradient(359deg, #1c55b7 0%, #5d94dc 100%), #3971c8;
+  transition: height 250ms linear;
 }
 
 .price-block-content {
