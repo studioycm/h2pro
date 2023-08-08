@@ -28,11 +28,11 @@ document
 
 document
   .getElementById("track2")
-  .addEventListener("input", ({ target }) => rangeSlider(target, 0, 100));
+  .addEventListener("input", ({ target }) => rangeSlider(target, 10, 100));
 
 document
   .getElementById("track3")
-  .addEventListener("input", ({ target }) => rangeSlider(target, 0, 10, "kg"));
+  .addEventListener("input", ({ target }) => rangeSlider(target, 1, 10, "kg"));
 
 document
   .getElementById("track4")
