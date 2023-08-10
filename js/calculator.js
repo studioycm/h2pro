@@ -79,6 +79,36 @@ const calculateDeveloper = () => {
     Number(valueHydrogen.value)
   );
 
+  if ((calcConvetionalValue / 159) * 100 < 15) {
+    if (!valueConvetional.parentElement.classList.contains("active")) {
+      valueConvetional.parentElement.classList.add("active");
+    }
+  } else {
+    if (valueConvetional.parentElement.classList.contains("active")) {
+      valueConvetional.parentElement.classList.remove("active");
+    }
+  }
+
+  if ((calcEtacValue / 209) * 100 < 15) {
+    if (!valueEtac.parentElement.classList.contains("active")) {
+      valueEtac.parentElement.classList.add("active");
+    }
+  } else {
+    if (valueEtac.parentElement.classList.contains("active")) {
+      valueEtac.parentElement.classList.remove("active");
+    }
+  }
+
+  if ((calcProfitsValue / 493) * 100 < 15) {
+    if (!valueProfits.parentElement.classList.contains("active")) {
+      valueProfits.parentElement.classList.add("active");
+    }
+  } else {
+    if (valueProfits.parentElement.classList.contains("active")) {
+      valueProfits.parentElement.classList.remove("active");
+    }
+  }
+
   valueConvetional.innerText = Math.floor(calcConvetionalValue);
   elConvetional.style.height = `${(calcConvetionalValue / 159) * 100}%`;
 
@@ -103,6 +133,36 @@ const calculateConsumer = () => {
     calculateConsumerEtacResult,
     Number(valueCostElectricity.value)
   );
+
+  if ((calculateConsumerConventionalResult / 11000) * 100 < 15) {
+    if (!valueConvetionalConsumer.parentElement.classList.contains("active")) {
+      valueConvetionalConsumer.parentElement.classList.add("active");
+    }
+  } else {
+    if (valueConvetionalConsumer.parentElement.classList.contains("active")) {
+      valueConvetionalConsumer.parentElement.classList.remove("active");
+    }
+  }
+
+  if ((calculateConsumerEtacResult / 8400) * 100 < 15) {
+    if (!valueEtacConsumer.parentElement.classList.contains("active")) {
+      valueEtacConsumer.parentElement.classList.add("active");
+    }
+  } else {
+    if (valueEtacConsumer.parentElement.classList.contains("active")) {
+      valueEtacConsumer.parentElement.classList.remove("active");
+    }
+  }
+
+  if ((calculateConsumerProfitsResult / 260) * 100 < 15) {
+    if (!valueProfitsConsumer.parentElement.classList.contains("active")) {
+      valueProfitsConsumer.parentElement.classList.add("active");
+    }
+  } else {
+    if (valueProfitsConsumer.parentElement.classList.contains("active")) {
+      valueProfitsConsumer.parentElement.classList.remove("active");
+    }
+  }
 
   valueConvetionalConsumer.innerText = Math.floor(
     calculateConsumerConventionalResult

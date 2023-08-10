@@ -223,6 +223,7 @@ input {
 
 .definitions-calculator-input-range-slider {
   pointer-events: none;
+  user-select: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -293,6 +294,19 @@ input {
 
 .balon-block-content {
   margin-top: 30px;
+  transition: margin-top 250ms linear;
+}
+
+.balon-block-content.active {
+  margin-top: -60px;
+}
+
+.balon-block-content.active .balon-block-content-value {
+  color: #85dc54;
+}
+
+.balon-block-content.active .balon-block-content-text {
+  color: #85dc54;
 }
 
 .balon-block-content-value {
@@ -303,6 +317,7 @@ input {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  transition: color 250ms linear;
 }
 
 .balon-block-content-text {
@@ -313,6 +328,7 @@ input {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  transition: color 250ms linear;
 }
 
 .charge {
@@ -355,6 +371,19 @@ input {
 
 .charge-block-content {
   margin-top: 30px;
+  transition: margin-top 250ms linear;
+}
+
+.charge-block-content.active {
+  margin-top: -60px;
+}
+
+.charge-block-content.active .charge-block-content-value {
+  color: #85dc54;
+}
+
+.charge-block-content.active .charge-block-content-text {
+  color: #85dc54;
 }
 
 .charge-block-content-value {
@@ -365,6 +394,7 @@ input {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  transition: color 250ms linear;
 }
 
 .charge-block-content-text {
@@ -375,6 +405,7 @@ input {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  transition: color 250ms linear;
 }
 
 .price {
@@ -404,6 +435,19 @@ input {
 
 .price-block-content {
   margin-top: 30px;
+  transition: margin-top 250ms linear;
+}
+
+.price-block-content.active {
+  margin-top: -60px;
+}
+
+.price-block-content.active .price-block-content-value {
+  color: #1c55b7;
+}
+
+.price-block-content.active .price-block-content-text {
+  color: #1c55b7;
 }
 
 .price-block-content-value {
@@ -414,6 +458,7 @@ input {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  transition: color 250ms linear;
 }
 
 .price-block-content-text {
@@ -424,6 +469,7 @@ input {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  transition: color 250ms linear;
 }
 
 .definitions-graph {
