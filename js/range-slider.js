@@ -1,8 +1,6 @@
 const rangeSlider = (element, min, max, meaning = "%") => {
   const currentValue = ((Number(element.value) - min) / (max - min)) * 100;
 
-  console.log(element.value);
-
   const backgroundLinear = `
     linear-gradient(to right, rgb(114, 190, 68) 0%, rgb(139, 223, 89) ${currentValue}%, rgb(239, 242, 245) ${currentValue}%, rgb(239, 242, 245) 100%)`;
 
