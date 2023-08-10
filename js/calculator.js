@@ -130,3 +130,6 @@ valueHydrogen.addEventListener("input", calculateDeveloper);
 
 valueHydrogenConsumer.addEventListener("input", calculateConsumer);
 valueCostElectricity.addEventListener("input", calculateConsumer);
+
+calculateDeveloper();
+calculateConsumer();

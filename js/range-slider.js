@@ -1,6 +1,8 @@
 const rangeSlider = (element, min, max, meaning = "%") => {
   const currentValue = ((Number(element.value) - min) / (max - min)) * 100;
 
+  console.log(element.value);
+
   const backgroundLinear = `
     linear-gradient(to right, rgb(114, 190, 68) 0%, rgb(139, 223, 89) ${currentValue}%, rgb(239, 242, 245) ${currentValue}%, rgb(239, 242, 245) 100%)`;
 
@@ -45,3 +47,11 @@ document
   .addEventListener("input", ({ target }) =>
     rangeSlider(target, 10, 100, "kWh")
   );
+
+document.getElementById("track1");
+
+rangeSlider(document.getElementById("track1"), 100, 1000, "MW");
+rangeSlider(document.getElementById("track2"), 10, 100);
+rangeSlider(document.getElementById("track3"), 1, 10, "kg");
+rangeSlider(document.getElementById("track4"), 10, 200, "MW");
+rangeSlider(document.getElementById("track5"), 10, 100, "kWh");
