@@ -13,6 +13,10 @@ const rangeSlider = (element, min, max, meaning = "%") => {
     element.parentElement.children[2].children[0].innerText = `$${Number(
       element.value
     )} / kg`;
+  } else if (meaning === "MWh") {
+    element.parentElement.children[2].children[0].innerText = `$${Number(
+      element.value
+    )} / MWh`;
   } else {
     element.parentElement.children[2].children[0].innerText = `${Number(
       element.value
@@ -37,13 +41,13 @@ document
 document
   .getElementById("track4")
   .addEventListener("input", ({ target }) =>
-    rangeSlider(target, 10, 200, "MW")
+    rangeSlider(target, 10, 200, "ktpa")
   );
 
 document
   .getElementById("track5")
   .addEventListener("input", ({ target }) =>
-    rangeSlider(target, 10, 100, "kWh")
+    rangeSlider(target, 10, 100, "MWh")
   );
 
 document.getElementById("track1");
@@ -51,5 +55,5 @@ document.getElementById("track1");
 rangeSlider(document.getElementById("track1"), 100, 1000, "MW");
 rangeSlider(document.getElementById("track2"), 10, 100);
 rangeSlider(document.getElementById("track3"), 1, 10, "kg");
-rangeSlider(document.getElementById("track4"), 10, 200, "MW");
-rangeSlider(document.getElementById("track5"), 10, 100, "kWh");
+rangeSlider(document.getElementById("track4"), 10, 200, "ktpa");
+rangeSlider(document.getElementById("track5"), 10, 100, "MWh");
