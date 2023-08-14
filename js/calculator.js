@@ -62,6 +62,14 @@ function calculateConsumerProfits(I2, I3, D3) {
   return result;
 }
 
+const formatNumber = (number) => {
+  if (Number.isInteger(number)) {
+    return number.toString();
+  } else {
+    return number.toFixed(2);
+  }
+};
+
 const calculateDeveloper = () => {
   const calcConvetionalValue = calculateDeveloperConventional(
     Number(valueSize.value),
@@ -110,12 +118,16 @@ const calculateDeveloper = () => {
   }
 
   valueConvetional.innerText = Math.floor(calcConvetionalValue);
-  elConvetional.style.height = `${(calcConvetionalValue / 159) * 100}%`;
+  elConvetional.style.height = `${(calcConvetionalValue / 209) * 100}%`;
 
   valueEtac.innerText = Math.floor(calcEtacValue);
   elEtac.style.height = `${(calcEtacValue / 209) * 100}%`;
 
-  valueProfits.innerText = `$${Math.floor(calcProfitsValue)}`;
+  valueProfits.innerText =
+    Number(calcProfitsValue) < 0.6
+      ? `$0.5`
+      : `$${formatNumber(calcProfitsValue)}`;
+
   elProfits.style.height = `${(calcProfitsValue / 493) * 100}%`;
 };
 
@@ -173,12 +185,13 @@ const calculateConsumer = () => {
 
   valueEtacConsumer.innerText = Math.floor(calculateConsumerEtacResult);
   elEtacConsumer.style.height = `${
-    (calculateConsumerEtacResult / 8400) * 100
+    (calculateConsumerEtacResult / 11000) * 100
   }%`;
 
-  valueProfitsConsumer.innerText = `$${Math.floor(
-    calculateConsumerProfitsResult
-  )}`;
+  valueProfitsConsumer.innerText =
+    calculateConsumerConventionalResult <= 0.4
+      ? `$0.5`
+      : `$${formatNumber(calculateConsumerProfitsResult)}`;
   elProfitsConsumer.style.height = `${
     (calculateConsumerProfitsResult / 260) * 100
   }%`;
