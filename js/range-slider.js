@@ -32,16 +32,16 @@ document
 
 document
   .getElementById("track2")
-  .addEventListener("input", ({ target }) => rangeSlider(target, 10, 100));
+  .addEventListener("input", ({ target }) => rangeSlider(target, 30, 100));
 
 document
   .getElementById("track3")
-  .addEventListener("input", ({ target }) => rangeSlider(target, 1, 10, "kg"));
+  .addEventListener("input", ({ target }) => rangeSlider(target, 1, 5, "kg"));
 
 document
   .getElementById("track4")
   .addEventListener("input", ({ target }) =>
-    rangeSlider(target, 10, 200, "ktpa")
+    rangeSlider(target, 10, 100, "ktpa")
   );
 
 document
@@ -53,7 +53,7 @@ document
 document.getElementById("track1");
 
 rangeSlider(document.getElementById("track1"), 100, 1000, "MW");
-rangeSlider(document.getElementById("track2"), 10, 100);
-rangeSlider(document.getElementById("track3"), 1, 10, "kg");
-rangeSlider(document.getElementById("track4"), 10, 200, "ktpa");
+rangeSlider(document.getElementById("track2"), 30, 100);
+rangeSlider(document.getElementById("track3"), 1, 5, "kg");
+rangeSlider(document.getElementById("track4"), 10, 100, "ktpa");
 rangeSlider(document.getElementById("track5"), 10, 100, "MWh");

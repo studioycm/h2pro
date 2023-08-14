@@ -43,7 +43,7 @@ function calculateDeveloperEtac(D2, D3) {
 }
 
 function calculateDeveloperProfits(I2, I3, D4) {
-  const result = (I3 - I2) * D4;
+  const result = (I3 - I2) * D4 * 20;
 
   return result;
 }
@@ -107,7 +107,7 @@ const calculateDeveloper = () => {
     }
   }
 
-  if ((calcProfitsValue / 493) * 100 < 15) {
+  if ((calcProfitsValue / 4930) * 100 < 15) {
     if (!valueProfits.parentElement.classList.contains("active")) {
       valueProfits.parentElement.classList.add("active");
     }
@@ -126,9 +126,9 @@ const calculateDeveloper = () => {
   valueProfits.innerText =
     Number(calcProfitsValue) < 0.6
       ? `$0.5`
-      : `$${formatNumber(calcProfitsValue)}`;
+      : `$${Math.floor(calcProfitsValue)}`;
 
-  elProfits.style.height = `${(calcProfitsValue / 493) * 100}%`;
+  elProfits.style.height = `${(calcProfitsValue / 4930) * 100}%`;
 };
 
 const calculateConsumer = () => {
@@ -191,9 +191,9 @@ const calculateConsumer = () => {
   valueProfitsConsumer.innerText =
     calculateConsumerConventionalResult <= 0.4
       ? `$0.5`
-      : `$${formatNumber(calculateConsumerProfitsResult)}`;
+      : `$${Math.floor(calculateConsumerProfitsResult)}`;
   elProfitsConsumer.style.height = `${
-    (calculateConsumerProfitsResult / 260) * 100
+    (calculateConsumerProfitsResult / 130) * 100
   }%`;
 };
 
