@@ -180,12 +180,12 @@ const calculateConsumer = () => {
     calculateConsumerConventionalResult
   );
   elConvetionalConsumer.style.height = `${
-    (calculateConsumerConventionalResult / 11000) * 100
+    (calculateConsumerConventionalResult / 5500) * 100
   }%`;
 
   valueEtacConsumer.innerText = Math.floor(calculateConsumerEtacResult);
   elEtacConsumer.style.height = `${
-    (calculateConsumerEtacResult / 11000) * 100
+    (calculateConsumerEtacResult / 5500) * 100
   }%`;
 
   valueProfitsConsumer.innerText =
