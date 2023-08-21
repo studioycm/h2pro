@@ -20,7 +20,7 @@ const rangeSlider = (element, min, max, meaning = "%") => {
   } else {
     element.parentElement.children[2].children[0].innerText = `${Number(
       element.value
-    )}${meaning}`;
+    )} ${meaning}`;
   }
 };
 

@@ -118,17 +118,20 @@ const calculateDeveloper = () => {
   }
 
   valueConvetional.innerText = Math.floor(calcConvetionalValue);
-  elConvetional.style.height = `${(calcConvetionalValue / 209) * 100}%`;
+
+  elConvetional.style.height = `calc(${
+    (calcConvetionalValue / 209) * 100
+  }% + 15%)`;
 
   valueEtac.innerText = Math.floor(calcEtacValue);
-  elEtac.style.height = `${(calcEtacValue / 209) * 100}%`;
+  elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}% + 23%)`;
 
   valueProfits.innerText =
     Number(calcProfitsValue) < 0.6
       ? `$0.5`
       : `$${Math.floor(calcProfitsValue)}`;
 
-  elProfits.style.height = `${(calcProfitsValue / 4930) * 100}%`;
+  elProfits.style.height = `calc(${(calcProfitsValue / 4930) * 100}% + 25%)`;
 };
 
 const calculateConsumer = () => {
@@ -179,11 +182,13 @@ const calculateConsumer = () => {
   valueConvetionalConsumer.innerText = Math.floor(
     calculateConsumerConventionalResult
   );
-  elConvetionalConsumer.style.height = `${
+
+  elConvetionalConsumer.style.height = `calc(${
     (calculateConsumerConventionalResult / 5500) * 100
-  }%`;
+  }% + 2%)`;
 
   valueEtacConsumer.innerText = Math.floor(calculateConsumerEtacResult);
+
   elEtacConsumer.style.height = `${
     (calculateConsumerEtacResult / 5500) * 100
   }%`;
@@ -192,9 +197,9 @@ const calculateConsumer = () => {
     calculateConsumerConventionalResult <= 0.4
       ? `$0.5`
       : `$${Math.floor(calculateConsumerProfitsResult)}`;
-  elProfitsConsumer.style.height = `${
-    (calculateConsumerProfitsResult / 130) * 100
-  }%`;
+  elProfitsConsumer.style.height = `calc(${
+    (calculateConsumerProfitsResult / 130) * 140
+  }% + 3%)`;
 };
 
 valueSize.addEventListener("input", calculateDeveloper);
