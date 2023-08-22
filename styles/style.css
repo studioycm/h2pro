@@ -537,7 +537,8 @@ input {
   font-style: normal;
   font-weight: 400;
   line-height: 130%; /* 26px */
-  max-width: 182px;
+  max-width: 194px;
+  width: 100%;
 }
 
 .definitions-graph-item-desc-first {
@@ -548,7 +549,6 @@ input {
   font-style: normal;
   font-weight: 400;
   line-height: 130%; /* 26px */
-  max-width: 182px;
 }
 
 .definitions-graph-item-desc-second {
@@ -559,7 +559,6 @@ input {
   font-style: normal;
   font-weight: 400;
   line-height: 130%; /* 26px */
-  max-width: 182px;
   margin-top: 5px;
 }
 
