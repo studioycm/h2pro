@@ -70,6 +70,16 @@ const formatNumber = (number) => {
   }
 };
 
+function customRound(number) {
+  const decimalPart = number - Math.floor(number);
+
+  if (decimalPart >= 0.5) {
+    return Math.ceil(number);
+  } else {
+    return Math.floor(number);
+  }
+}
+
 const calculateDeveloper = () => {
   const calcConvetionalValue = calculateDeveloperConventional(
     Number(valueSize.value),
@@ -117,19 +127,19 @@ const calculateDeveloper = () => {
     }
   }
 
-  valueConvetional.innerText = Math.floor(calcConvetionalValue);
+  valueConvetional.innerText = customRound(calcConvetionalValue);
 
   elConvetional.style.height = `calc(${
     (calcConvetionalValue / 209) * 100
   }% + 15%)`;
 
-  valueEtac.innerText = Math.floor(calcEtacValue);
+  valueEtac.innerText = customRound(calcEtacValue);
   elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}% + 23%)`;
 
   valueProfits.innerText =
     Number(calcProfitsValue) < 0.6
       ? `$0.5`
-      : `$${parseFloat(calcProfitsValue.toFixed(2))}`;
+      : `$${customRound(calcProfitsValue)}`;
 
   elProfits.style.height = `calc(${(calcProfitsValue / 4930) * 100}% + 25%)`;
 };
@@ -179,7 +189,7 @@ const calculateConsumer = () => {
     }
   }
 
-  valueConvetionalConsumer.innerText = Math.floor(
+  valueConvetionalConsumer.innerText = customRound(
     calculateConsumerConventionalResult
   );
 
@@ -187,7 +197,7 @@ const calculateConsumer = () => {
     (calculateConsumerConventionalResult / 5500) * 100
   }% + 2%)`;
 
-  valueEtacConsumer.innerText = Math.floor(calculateConsumerEtacResult);
+  valueEtacConsumer.innerText = customRound(calculateConsumerEtacResult);
 
   elEtacConsumer.style.height = `${
     (calculateConsumerEtacResult / 5500) * 100
@@ -196,7 +206,7 @@ const calculateConsumer = () => {
   valueProfitsConsumer.innerText =
     calculateConsumerConventionalResult <= 0.4
       ? `$0.5`
-      : `$${parseFloat(calculateConsumerProfitsResult.toFixed(2))}`;
+      : `$${customRound(calculateConsumerProfitsResult)}`;
   elProfitsConsumer.style.height = `calc(${
     (calculateConsumerProfitsResult / 130) * 140
   }% + 3%)`;
