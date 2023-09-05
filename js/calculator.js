@@ -30,14 +30,14 @@ const valueProfitsConsumer = document.getElementById("value-profits-consumer");
 function calculateDeveloperConventional(D2, D3) {
   const KWH = 1 / 55;
 
-  const result = D2 * 8760 * (D3 / 100) * KWH * 0.001;
+  const result = D2 * D3 * KWH * 0.001;
 
   return result;
 }
 
 function calculateDeveloperEtac(D2, D3) {
   const KWH = 1 / 42;
-  const result = D2 * 8760 * (D3 / 100) * KWH * 0.001;
+  const result = D2 * D3 * KWH * 0.001;
 
   return result;
 }
@@ -129,7 +129,7 @@ const calculateDeveloper = () => {
   valueProfits.innerText =
     Number(calcProfitsValue) < 0.6
       ? `$0.5`
-      : `$${Math.floor(calcProfitsValue)}`;
+      : `$${parseFloat(calcProfitsValue.toFixed(2))}`;
 
   elProfits.style.height = `calc(${(calcProfitsValue / 4930) * 100}% + 25%)`;
 };
@@ -196,7 +196,7 @@ const calculateConsumer = () => {
   valueProfitsConsumer.innerText =
     calculateConsumerConventionalResult <= 0.4
       ? `$0.5`
-      : `$${Math.floor(calculateConsumerProfitsResult)}`;
+      : `$${parseFloat(calculateConsumerProfitsResult.toFixed(2))}`;
   elProfitsConsumer.style.height = `calc(${
     (calculateConsumerProfitsResult / 130) * 140
   }% + 3%)`;

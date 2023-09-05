@@ -1,4 +1,9 @@
-const rangeSlider = (element, min, max, meaning = "%") => {
+const rangeSlider = (element, meaning = "%") => {
+  const min = Number(element.min);
+  const max = Number(element.max);
+
+  console.log(min);
+
   const currentValue = ((Number(element.value) - min) / (max - min)) * 100;
 
   const backgroundLinear = `
@@ -26,34 +31,28 @@ const rangeSlider = (element, min, max, meaning = "%") => {
 
 document
   .getElementById("track1")
-  .addEventListener("input", ({ target }) =>
-    rangeSlider(target, 100, 1000, "MW")
-  );
+  .addEventListener("input", ({ target }) => rangeSlider(target, "MW"));
 
 document
   .getElementById("track2")
-  .addEventListener("input", ({ target }) => rangeSlider(target, 30, 100));
+  .addEventListener("input", ({ target }) => rangeSlider(target, "hrs"));
 
 document
   .getElementById("track3")
-  .addEventListener("input", ({ target }) => rangeSlider(target, 1, 5, "kg"));
+  .addEventListener("input", ({ target }) => rangeSlider(target, "kg"));
 
 document
   .getElementById("track4")
-  .addEventListener("input", ({ target }) =>
-    rangeSlider(target, 10, 100, "ktpa")
-  );
+  .addEventListener("input", ({ target }) => rangeSlider(target, "ktpa"));
 
 document
   .getElementById("track5")
-  .addEventListener("input", ({ target }) =>
-    rangeSlider(target, 10, 100, "MWh")
-  );
+  .addEventListener("input", ({ target }) => rangeSlider(target, "MWh"));
 
 document.getElementById("track1");
 
-rangeSlider(document.getElementById("track1"), 100, 1000, "MW");
-rangeSlider(document.getElementById("track2"), 30, 100);
-rangeSlider(document.getElementById("track3"), 1, 5, "kg");
-rangeSlider(document.getElementById("track4"), 10, 100, "ktpa");
-rangeSlider(document.getElementById("track5"), 10, 100, "MWh");
+rangeSlider(document.getElementById("track1"), "MW");
+rangeSlider(document.getElementById("track2"), "hrs");
+rangeSlider(document.getElementById("track3"), "kg");
+rangeSlider(document.getElementById("track4"), "ktpa");
+rangeSlider(document.getElementById("track5"), "MWh");

@@ -16,7 +16,9 @@
         </h1>
 
         <div class="definitions-calculator">
-          <p class="definitions-calculator-desc">Сalculate for</p>
+          <p class="definitions-calculator-desc">
+            Explore what this means for your project
+          </p>
 
           <div class="definitions-calculator-categories-block">
             <div class="definitions-calculator-categories">
@@ -75,16 +77,16 @@
             </div>
 
             <div class="definitions-calculator-block">
-              <p class="definitions-calculator-title">Capacity factor</p>
+              <p class="definitions-calculator-title">Annual Operating Hours</p>
 
               <div class="definitions-calculator-input">
-                <p class="definitions-calculator-input-min">30%</p>
+                <p class="definitions-calculator-input-min">1500 hrs</p>
                 <input
                   type="range"
                   class="definitions-calculator-input-range"
-                  min="30"
-                  max="100"
-                  value="50"
+                  min="1500"
+                  max="8760"
+                  value="4500"
                   id="track2"
                   style="
                     background: linear-gradient(
@@ -97,10 +99,12 @@
                   "
                 />
                 <div class="definitions-calculator-input-value">
-                  <p class="definitions-calculator-input-value-text">50%</p>
+                  <p class="definitions-calculator-input-value-text">
+                    4500 hrs
+                  </p>
                 </div>
                 <div class="definitions-calculator-input-range-slider"></div>
-                <p class="definitions-calculator-input-max">100%</p>
+                <p class="definitions-calculator-input-max">8760 hrs</p>
               </div>
             </div>
 
@@ -114,6 +118,7 @@
                   class="definitions-calculator-input-range"
                   min="1"
                   max="5"
+                  step="0.5"
                   value="3"
                   id="track3"
                   style="
@@ -212,13 +217,18 @@
                       81
                     </p>
                     <p class="balon-block-content-text">ktpa H<sub>2</sub></p>
+
+                    <svg class="balon-block-content-icon">
+                      <use href="./images/sprite.svg#Union"></use>
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
 
             <p class="definitions-graph-item-desc">
-              Conventional Electrolysis<br />
+              Conventional <br />
+              Electrolysis<br />
               H<sub>2</sub> Production
             </p>
           </div>
@@ -230,13 +240,18 @@
                   <div class="balon-block-content">
                     <p class="balon-block-content-value" id="value-etac">104</p>
                     <p class="balon-block-content-text">ktpa H<sub>2</sub></p>
+
+                    <svg class="balon-block-content-icon">
+                      <use href="./images/sprite.svg#Union"></use>
+                    </svg>
                   </div>
                 </div>
+                <img class="balon-decor" src="./images/h2pro.svg" />
               </div>
             </div>
 
             <p class="definitions-graph-item-desc">
-              E-TAC Electrolysis H<sub>2</sub> Production
+              E-TAC <br />Electrolysis <br />H<sub>2</sub> Production
             </p>
           </div>
           <div class="definitions-graph-item">
@@ -248,6 +263,10 @@
                       $493
                     </p>
                     <p class="price-block-content-text">Million</p>
+
+                    <svg class="price-block-content-icon">
+                      <use href="./images/sprite.svg#dol"></use>
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -255,13 +274,14 @@
 
             <div class="definitions-graph-item-desc">
               <p class="definitions-graph-item-desc-first">
-                E-TAC Additional Profits
+                E-TAC <br />Additional Profits<br />
+                Over 20 Years
               </p>
-
+              <!-- 
               <p class="definitions-graph-item-desc-second">
                 over project lifetime
-              </p>
-              <span class="definitions-graph-item-desc-span">(20 years)</span>
+              </p> -->
+              <!-- <span class="definitions-graph-item-desc-span">(20 years)</span> -->
             </div>
           </div>
         </div>
@@ -293,7 +313,7 @@
             </div>
 
             <p class="definitions-graph-item-desc">
-              Conventional Electrolysis<br />
+              Conventional <br />Electrolysis<br />
               Power Consumption
             </p>
           </div>
@@ -317,12 +337,13 @@
                     </svg>
                   </div>
                 </div>
+                <img class="balon-decor" src="./images/h2pro.svg" />
               </div>
               <div class="charge-icon-down"></div>
             </div>
 
             <p class="definitions-graph-item-desc">
-              E-TAC Electrolysis Power Consumption
+              E-TAC <br />Electrolysis Power Consumption
             </p>
           </div>
           <div class="definitions-graph-item">
@@ -337,8 +358,12 @@
                       $260
                     </p>
                     <p class="price-block-content-text">Million</p>
+                    <svg class="price-block-content-icon">
+                      <use href="./images/sprite.svg#dol"></use>
+                    </svg>
                   </div>
                 </div>
+                <img class="price-decor" src="./images/h2pro.svg" />
               </div>
             </div>
 
@@ -348,7 +373,7 @@
               >
 
               <p class="definitions-graph-item-desc-first">
-                E-TAC Electricity Savings
+                E-TAC <br />Electricity Savings
               </p>
             </div>
           </div>

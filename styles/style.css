@@ -274,6 +274,13 @@ input {
   height: 125px;
 }
 
+.balon-decor {
+  position: absolute;
+  bottom: 21px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .balon-block {
   position: relative;
   width: 161px;
@@ -298,8 +305,18 @@ input {
   transition: margin-top 250ms linear;
 }
 
+.balon-block-content-icon {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 16px;
+  width: 48px;
+  height: 20px;
+  fill: white;
+  transition: fill 250ms linear;
+}
+
 .balon-block-content.active {
-  margin-top: -60px;
+  margin-top: -100px;
 }
 
 .balon-block-content.active .balon-block-content-value {
@@ -308,6 +325,10 @@ input {
 
 .balon-block-content.active .balon-block-content-text {
   color: #85dc54;
+}
+
+.balon-block-content.active .balon-block-content-icon {
+  fill: #85dc54;
 }
 
 .balon-block-content-value {
@@ -439,6 +460,13 @@ input {
   flex-direction: column;
 }
 
+.price-decor {
+  position: absolute;
+  bottom: 21px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .price-block {
   position: relative;
   width: 161px;
@@ -463,8 +491,18 @@ input {
   transition: margin-top 250ms linear;
 }
 
+.price-block-content-icon {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 16px;
+  width: 23px;
+  height: 36px;
+  fill: white;
+  transition: fill 250ms linear;
+}
+
 .price-block-content.active {
-  margin-top: -60px;
+  margin-top: -110px;
 }
 
 .price-block-content.active .price-block-content-value {
@@ -473,6 +511,9 @@ input {
 
 .price-block-content.active .price-block-content-text {
   color: #1c55b7;
+}
+.price-block-content.active .price-block-content-icon {
+  fill: #1c55b7;
 }
 
 .price-block-content-value {
