@@ -131,7 +131,7 @@ const calculateDeveloper = () => {
 
   elConvetional.style.height = `calc(${
     (calcConvetionalValue / 209) * 100
-  }% + 15%)`;
+  }% + 5%)`;
 
   valueEtac.innerText = customRound(calcEtacValue);
   elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}% + 23%)`;

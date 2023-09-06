@@ -2,7 +2,7 @@ const rangeSlider = (element, meaning = "%") => {
   const min = Number(element.min);
   const max = Number(element.max);
 
-  console.log(min);
+  // console.log(min);
 
   const currentValue = ((Number(element.value) - min) / (max - min)) * 100;
 
@@ -29,13 +29,29 @@ const rangeSlider = (element, meaning = "%") => {
   }
 };
 
+const checkValue = (rangeInput) => {
+  // console.log(rangeInput.value);
+  // if (Number(rangeInput.value) >= 8500) {
+  //   rangeInput.setAttribute("step", "260");
+  // } else if (
+  //   Number(rangeInput.value) !== 8760 &&
+  //   Number(rangeInput.value) > 8500
+  // ) {
+  //   rangeInput.setAttribute("step", "500");
+  // } else {
+  //   rangeInput.setAttribute("step", "500");
+  // }
+  // console.log(rangeInput.step);
+};
+
 document
   .getElementById("track1")
   .addEventListener("input", ({ target }) => rangeSlider(target, "MW"));
 
-document
-  .getElementById("track2")
-  .addEventListener("input", ({ target }) => rangeSlider(target, "hrs"));
+document.getElementById("track2").addEventListener("input", ({ target }) => {
+  checkValue(target);
+  rangeSlider(target, "hrs");
+});
 
 document
   .getElementById("track3")
