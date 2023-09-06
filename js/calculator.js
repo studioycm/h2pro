@@ -97,7 +97,7 @@ const calculateDeveloper = () => {
     Number(valueHydrogen.value)
   );
 
-  if ((calcConvetionalValue / 159) * 100 < 15) {
+  if ((calcConvetionalValue / 159) * 100 < 30) {
     if (!valueConvetional.parentElement.classList.contains("active")) {
       valueConvetional.parentElement.classList.add("active");
     }
@@ -107,7 +107,7 @@ const calculateDeveloper = () => {
     }
   }
 
-  if ((calcEtacValue / 209) * 100 < 15) {
+  if ((calcEtacValue / 209) * 100 < 30) {
     if (!valueEtac.parentElement.classList.contains("active")) {
       valueEtac.parentElement.classList.add("active");
     }
