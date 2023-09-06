@@ -129,12 +129,10 @@ const calculateDeveloper = () => {
 
   valueConvetional.innerText = customRound(calcConvetionalValue);
 
-  elConvetional.style.height = `calc(${
-    (calcConvetionalValue / 209) * 100
-  }% + 5%)`;
+  elConvetional.style.height = `calc(${(calcConvetionalValue / 209) * 100}% `;
 
   valueEtac.innerText = customRound(calcEtacValue);
-  elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}% + 23%)`;
+  elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}%`;
 
   valueProfits.innerText =
     Number(calcProfitsValue) < 0.6
