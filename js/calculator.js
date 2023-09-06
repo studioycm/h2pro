@@ -135,9 +135,7 @@ const calculateDeveloper = () => {
   elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}%`;
 
   valueProfits.innerText =
-    Number(calcProfitsValue) < 0.6
-      ? `$0.5`
-      : `$${customRound(calcProfitsValue)}`;
+    Number(calcProfitsValue) < 0.6 ? `0.5` : `${customRound(calcProfitsValue)}`;
 
   elProfits.style.height = `calc(${(calcProfitsValue / 4930) * 100}% + 25%)`;
 };
@@ -203,8 +201,8 @@ const calculateConsumer = () => {
 
   valueProfitsConsumer.innerText =
     calculateConsumerConventionalResult <= 0.4
-      ? `$0.5`
-      : `$${customRound(calculateConsumerProfitsResult)}`;
+      ? `0.5`
+      : `${customRound(calculateConsumerProfitsResult)}`;
   elProfitsConsumer.style.height = `calc(${
     (calculateConsumerProfitsResult / 130) * 140
   }% + 3%)`;
