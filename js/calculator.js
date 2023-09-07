@@ -195,17 +195,33 @@ const calculateConsumer = () => {
 
   valueEtacConsumer.innerText = customRound(calculateConsumerEtacResult);
 
-  elEtacConsumer.style.height = `${
-    (calculateConsumerEtacResult / 5500) * 100
-  }%`;
+  if ((calculateConsumerEtacResult / 5500) * 100 > 10) {
+    elEtacConsumer.style.height = `calc(${
+      (calculateConsumerEtacResult / 5500) * 100
+    }% )`;
+  } else {
+    elEtacConsumer.style.height = `calc(${
+      (calculateConsumerEtacResult / 5500) * 100
+    }% + 5%)`;
+  }
 
-  valueProfitsConsumer.innerText =
-    calculateConsumerConventionalResult <= 0.4
-      ? `0.5`
-      : `${customRound(calculateConsumerProfitsResult)}`;
-  elProfitsConsumer.style.height = `calc(${
-    (calculateConsumerProfitsResult / 130) * 140
-  }% + 3%)`;
+  if ((calculateConsumerProfitsResult / 130) * 140 > 10) {
+    valueProfitsConsumer.innerText =
+      calculateConsumerConventionalResult <= 0.4
+        ? `0.5`
+        : `${customRound(calculateConsumerProfitsResult)}`;
+    elProfitsConsumer.style.height = `calc(${
+      (calculateConsumerProfitsResult / 130) * 140
+    }% + 3%)`;
+  } else {
+    valueProfitsConsumer.innerText =
+      calculateConsumerConventionalResult <= 0.4
+        ? `0.5`
+        : `${customRound(calculateConsumerProfitsResult)}`;
+    elProfitsConsumer.style.height = `calc(${
+      (calculateConsumerProfitsResult / 130) * 140
+    }% + 10%)`;
+  }
 };
 
 valueSize.addEventListener("input", calculateDeveloper);
