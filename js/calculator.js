@@ -202,9 +202,15 @@ const calculateConsumer = () => {
     calculateConsumerConventionalResult
   );
 
-  elConvetionalConsumer.style.height = `calc(${
-    (calculateConsumerConventionalResult / 5500) * 100
-  }% + 2%)`;
+  if ((calculateConsumerConventionalResult / 5500) * 100 > 10) {
+    elConvetionalConsumer.style.height = `calc(${
+      (calculateConsumerConventionalResult / 5500) * 100
+    }% + 2%)`;
+  } else {
+    elConvetionalConsumer.style.height = `calc(${
+      (calculateConsumerConventionalResult / 5500) * 100
+    }% + 10%)`;
+  }
 
   valueEtacConsumer.innerText = customRound(calculateConsumerEtacResult);
 
