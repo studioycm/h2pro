@@ -1,11 +1,29 @@
 const rangeSlider = (element, meaning = "%") => {
   const min = Number(element.min);
-  const max = Number(element.max);
+  let max = Number(element.max);
+  const hoursCap = 8760;
+  let elValue = Number(element.value);
+  if (meaning === "hrs") {
+    elValue = Number(element.value) >= 8760 ? 8760 : Number(element.value);
+    max = hoursCap;
+  }
 
-  // console.log(min);
 
-  const currentValue = ((Number(element.value) - min) / (max - min)) * 100;
-
+  const currentValue = ((elValue - min) / (max - min)) * 100;
+  
+  console.log("meaning");
+  console.log(meaning);
+  console.log("min: " + min, "max: " + max);
+  console.log("element.value");
+  console.log(element.value);
+  console.log("elValue after cap");
+  console.log(elValue);
+  console.log("currentValue");
+  console.log(currentValue);
+  console.log("label before");
+  console.log(element.parentElement.children[2].children[0].innerText);
+  console.log("label now");
+  console.log(elValue);
   const backgroundLinear = `
     linear-gradient(to right, rgb(114, 190, 68) 0%, rgb(139, 223, 89) ${currentValue}%, rgb(239, 242, 245) ${currentValue}%, rgb(239, 242, 245) 100%)`;
 
@@ -22,6 +40,10 @@ const rangeSlider = (element, meaning = "%") => {
     element.parentElement.children[2].children[0].innerText = `$${Number(
       element.value
     )} / MWh`;
+  } else if (meaning === "hrs") {
+    element.parentElement.children[2].children[0].innerText = `${elValue} hrs`;
+    console.log("'hrs' label now");
+    console.log(element.parentElement.children[2].children[0].innerText);
   } else {
     element.parentElement.children[2].children[0].innerText = `${Number(
       element.value

@@ -81,14 +81,18 @@ function customRound(number) {
 }
 
 const calculateDeveloper = () => {
+  // cap 8760 fix start
+  let valueCapacityValue = Number(valueCapacity.value) >= 8760 ? 8760 : Number(valueCapacity.value);
+  // cap 8760 fix end
+  // using the capped version of the value 
   const calcConvetionalValue = calculateDeveloperConventional(
     Number(valueSize.value),
-    Number(valueCapacity.value)
+    valueCapacityValue
   );
 
   const calcEtacValue = calculateDeveloperEtac(
     Number(valueSize.value),
-    Number(valueCapacity.value)
+    valueCapacityValue
   );
 
   const calcProfitsValue = calculateDeveloperProfits(
