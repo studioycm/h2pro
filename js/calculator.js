@@ -133,10 +133,23 @@ const calculateDeveloper = () => {
 
   valueConvetional.innerText = customRound(calcConvetionalValue);
 
-  elConvetional.style.height = `calc(${(calcConvetionalValue / 209) * 100}% `;
+  if ((calcConvetionalValue / 209) * 100 > 10) {
+    elConvetional.style.height = `calc(${
+      (calcConvetionalValue / 209) * 100
+    }% )`;
+  } else {
+    elConvetional.style.height = `calc(${
+      (calcConvetionalValue / 209) * 100
+    }% + 5%) `;
+  }
 
   valueEtac.innerText = customRound(calcEtacValue);
-  elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}%`;
+
+  if ((calcEtacValue / 209) * 100 > 10) {
+    elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}%)`;
+  } else {
+    elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}% + 15%)`;
+  }
 
   valueProfits.innerText =
     Number(calcProfitsValue) < 0.6 ? `0.5` : `${customRound(calcProfitsValue)}`;
@@ -193,23 +206,45 @@ const calculateConsumer = () => {
     calculateConsumerConventionalResult
   );
 
-  elConvetionalConsumer.style.height = `calc(${
-    (calculateConsumerConventionalResult / 5500) * 100
-  }% + 2%)`;
+  if ((calculateConsumerConventionalResult / 5500) * 100 > 10) {
+    elConvetionalConsumer.style.height = `calc(${
+      (calculateConsumerConventionalResult / 5500) * 100
+    }% + 2%)`;
+  } else {
+    elConvetionalConsumer.style.height = `calc(${
+      (calculateConsumerConventionalResult / 5500) * 100
+    }% + 10%)`;
+  }
 
   valueEtacConsumer.innerText = customRound(calculateConsumerEtacResult);
 
-  elEtacConsumer.style.height = `${
-    (calculateConsumerEtacResult / 5500) * 100
-  }%`;
+  if ((calculateConsumerEtacResult / 5500) * 100 > 10) {
+    elEtacConsumer.style.height = `calc(${
+      (calculateConsumerEtacResult / 5500) * 100
+    }% )`;
+  } else {
+    elEtacConsumer.style.height = `calc(${
+      (calculateConsumerEtacResult / 5500) * 100
+    }% + 5%)`;
+  }
 
-  valueProfitsConsumer.innerText =
-    calculateConsumerConventionalResult <= 0.4
-      ? `0.5`
-      : `${customRound(calculateConsumerProfitsResult)}`;
-  elProfitsConsumer.style.height = `calc(${
-    (calculateConsumerProfitsResult / 130) * 140
-  }% + 3%)`;
+  if ((calculateConsumerProfitsResult / 130) * 140 > 10) {
+    valueProfitsConsumer.innerText =
+      calculateConsumerConventionalResult <= 0.4
+        ? `0.5`
+        : `${customRound(calculateConsumerProfitsResult)}`;
+    elProfitsConsumer.style.height = `calc(${
+      (calculateConsumerProfitsResult / 130) * 140
+    }% + 3%)`;
+  } else {
+    valueProfitsConsumer.innerText =
+      calculateConsumerConventionalResult <= 0.4
+        ? `0.5`
+        : `${customRound(calculateConsumerProfitsResult)}`;
+    elProfitsConsumer.style.height = `calc(${
+      (calculateConsumerProfitsResult / 130) * 140
+    }% + 10%)`;
+  }
 };
 
 valueSize.addEventListener("input", calculateDeveloper);
