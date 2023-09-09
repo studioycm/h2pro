@@ -1,18 +1,36 @@
 const rangeSlider = (element, meaning = "%") => {
+  // set cap/max for hours input value
   const hoursCap = 8760;
+  // get initial min and max values from input element
   const min = Number(element.min);
-  // changed max from const to let, so that it can be changed if "meaning" = hrs
-  let max = Number(element.max);
+  let max = Number(element.max); // changed max from const to let, so that it can be dynamic
   // get initial input element value
   let elValue = Number(element.value);
+  
   // if meaning is hrs, set max at 8760 hours, and cap elValue at 8760.
   if (meaning === "hrs") {
     elValue = Number(element.value) >= 8760 ? 8760 : Number(element.value);
     max = hoursCap;
   }
-  // parse value to a 
+
+  // calc percentage value for styling range slider with css 
   const percentageValue = ((elValue - min) / (max - min)) * 100;
   
+  // set background color of range slider
+  const backgroundLinear = `linear-gradient(to right, rgb(114, 190, 68) 0%, rgb(139, 223, 89) ${percentageValue}%, rgb(239, 242, 245) ${percentageValue}%, rgb(239, 242, 245) 100%)`;
+  element.style.background = backgroundLinear;
+  
+  // set left position of label
+  element.parentElement.children[2].style.left = `${percentageValue}%`;
+  element.parentElement.children[3].style.left = `${percentageValue}%`;
+  
+  // merged 2conditional statements of "kg" and "MWh" to one 
+  if (meaning === "kg" || meaning === "MWh") {
+    element.parentElement.children[2].children[0].innerText = `$${elValue} / ${meaning}`;
+  } else {
+    element.parentElement.children[2].children[0].innerText = `${elValue} ${meaning}`;
+  }
+
   // console.log("meaning");
   // console.log(meaning);
   // console.log("min: " + min, "max: " + max);
@@ -22,24 +40,8 @@ const rangeSlider = (element, meaning = "%") => {
   // console.log(elValue);
   // console.log("percentageValue");
   // console.log(percentageValue);
-  // console.log("label before");
+  // console.log("label");
   // console.log(element.parentElement.children[2].children[0].innerText);
-  // console.log("label now");
-  // console.log(elValue);
-
-  const backgroundLinear = `
-    linear-gradient(to right, rgb(114, 190, 68) 0%, rgb(139, 223, 89) ${percentageValue}%, rgb(239, 242, 245) ${percentageValue}%, rgb(239, 242, 245) 100%)`;
-
-  element.style.background = backgroundLinear;
-
-  element.parentElement.children[2].style.left = `${percentageValue}%`;
-  element.parentElement.children[3].style.left = `${percentageValue}%`;
-
-  if (meaning === "kg" || meaning === "MWh") {
-    element.parentElement.children[2].children[0].innerText = `$${elValue} / ${meaning}`;
-  } else {
-    element.parentElement.children[2].children[0].innerText = `${elValue} ${meaning}`;
-  }
 };
 
 
