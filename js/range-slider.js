@@ -30,18 +30,6 @@ const rangeSlider = (element, meaning = "%") => {
   } else {
     element.parentElement.children[2].children[0].innerText = `${elValue} ${meaning}`;
   }
-
-  // console.log("meaning");
-  // console.log(meaning);
-  // console.log("min: " + min, "max: " + max);
-  // console.log("element.value");
-  // console.log(element.value);
-  // console.log("elValue after cap");
-  // console.log(elValue);
-  // console.log("percentageValue");
-  // console.log(percentageValue);
-  // console.log("label");
-  // console.log(element.parentElement.children[2].children[0].innerText);
 };
 
 
@@ -49,9 +37,9 @@ document
   .getElementById("track1")
   .addEventListener("input", ({ target }) => rangeSlider(target, "MW"));
 
-document.getElementById("track2").addEventListener("input", ({ target }) => {
-  rangeSlider(target, "hrs");
-});
+document
+  .getElementById("track2")
+  .addEventListener("input", ({ target }) => rangeSlider(target, "hrs"));
 
 document
   .getElementById("track3")
@@ -64,8 +52,6 @@ document
 document
   .getElementById("track5")
   .addEventListener("input", ({ target }) => rangeSlider(target, "MWh"));
-
-document.getElementById("track1");
 
 rangeSlider(document.getElementById("track1"), "MW");
 rangeSlider(document.getElementById("track2"), "hrs");
