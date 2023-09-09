@@ -1,5 +1,5 @@
 const valueSize = document.getElementById("track1");
-const valueCapacity = document.getElementById("track2");
+const valueCapacity = document.getElementById("track2"); // cap value at 8760
 const valueHydrogen = document.getElementById("track3");
 
 const valueHydrogenConsumer = document.getElementById("track4");
@@ -81,9 +81,9 @@ function customRound(number) {
 }
 
 const calculateDeveloper = () => {
-  // cap 8760 fix start
+  // cap value at 8760 hours - a fix for "Annual Operating Hours" = "valueCapacity" input element's actual max 
   let valueCapacityValue = Number(valueCapacity.value) >= 8760 ? 8760 : Number(valueCapacity.value);
-  // cap 8760 fix end
+  
   // using the capped version of the value 
   const calcConvetionalValue = calculateDeveloperConventional(
     Number(valueSize.value),
