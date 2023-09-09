@@ -1,0 +1,140 @@
+body.mobile .definitions-calculator-categories {
+    flex: 1 0 100%;
+}
+
+body.mobile .definitions-calculator-categories-button {
+    padding: 10px 24px;
+    line-height: 1.3;
+    font-size: 14px;
+    max-width: 50%;
+}
+
+body.mobile .definitions-calculator-categories-info {
+    width: 34px;
+    height: 34px;
+}
+
+body.mobile img.definitions-calculator-categories-info-icon {
+    width: 48px;
+    height: 48px;
+}
+
+body.mobile .definitions-calculator-categories-block {flex-wrap: wrap;}
+
+body.mobile .definitions {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+body.mobile .definitions-content {
+    width: 100%;
+    flex: 1 0 100%;
+}
+
+body, body * {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+}
+
+body.mobile .definitions-graph {
+    gap: 10px;
+    height: auto;
+    padding: 30px 0;
+}
+
+body.mobile .definitions-graph-consumer {
+    gap: 20px;
+}
+
+body.mobile .charge-block {
+    width: 100%;
+    height: 320px;
+}
+
+body.mobile p.definitions-calculator-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+body.mobile .price-block {
+    width: 100%;
+    height: 340px;
+}
+
+body.mobile .definitions-calculator-block {
+    margin-bottom: 50px;
+}
+
+body.mobile p.definitions-calculator-input-value-text {
+    font-size: 10px;
+    line-height: 1.2;
+    margin-top: 6px;
+}
+
+body.mobile .definitions-calculator-input-value {
+    top: 26px;
+    height: 50px;
+    width: 80px;
+    background-size: cover;
+}
+
+body.mobile h1.definitions-title {
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+body.mobile .definitions-graph-item {
+    gap: 15px;
+}
+
+body.mobile img.charge-icon-up-3 {
+    width: 20px;
+    height: 200px;
+}
+
+body.mobile img.charge-icon-up:nth-child(1) {
+    width: 20%;
+    height: 20px;
+    margin-bottom: -10px;
+}
+body.mobile img.charge-icon-up:nth-child(2) {
+    width: 50%;
+    height: 15px;
+    margin-bottom: -9px;
+}
+
+body.mobile .charge-icon-down {
+    width: 60%;
+    height: 15px;
+    margin-top: -10px;
+}
+
+body.mobile span.definitions-title-span {
+    display: block;
+}
+
+body.mobile p.definitions-calculator-desc {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+body.mobile p.definitions-calculator-input-min, body.mobile .definitions-calculator-input-max {
+    font-size: 12px;
+}
+
+body.mobile {
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+body.mobile .definitions-calculator-consumer {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+body.mobile .charge-block-content {}

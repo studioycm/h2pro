@@ -117,6 +117,17 @@ input {
   height: 45px;
   cursor: pointer;
 }
+/* info icon size and color fix */
+.definitions-calculator-categories-info {
+  background-color: #ccc;
+  border-radius: 80px;
+  width: 53px;
+  height: 53px;
+}
+
+.definitions-calculator-categories-info-icon {width: 75px;height: 75px;}
+/* END -- info icon size and color fix */
+
 
 .definitions-calculator-categories-info-icon:hover
   + .definitions-calculator-categories-info-text {
