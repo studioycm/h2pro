@@ -138,17 +138,15 @@ const calculateDeveloper = () => {
       (calcConvetionalValue / 209) * 100
     }% )`;
   } else {
-    elConvetional.style.height = `calc(${
-      (calcConvetionalValue / 209) * 100
-    }% + 5%) `;
+    elConvetional.style.height = `5%`;
   }
 
   valueEtac.innerText = customRound(calcEtacValue);
 
-  if ((calcEtacValue / 209) * 100 > 10) {
+  if ((calcEtacValue / 209) * 100 > 15) {
     elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}%)`;
   } else {
-    elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}% + 15%)`;
+    elEtac.style.height = `15%`;
   }
 
   valueProfits.innerText =
@@ -206,14 +204,12 @@ const calculateConsumer = () => {
     calculateConsumerConventionalResult
   );
 
-  if ((calculateConsumerConventionalResult / 5500) * 100 > 10) {
+  if ((calculateConsumerConventionalResult / 5500) * 100 > 15) {
     elConvetionalConsumer.style.height = `calc(${
       (calculateConsumerConventionalResult / 5500) * 100
     }% + 2%)`;
   } else {
-    elConvetionalConsumer.style.height = `calc(${
-      (calculateConsumerConventionalResult / 5500) * 100
-    }% + 10%)`;
+    elConvetionalConsumer.style.height = `20%`;
   }
 
   valueEtacConsumer.innerText = customRound(calculateConsumerEtacResult);
@@ -223,9 +219,7 @@ const calculateConsumer = () => {
       (calculateConsumerEtacResult / 5500) * 100
     }% )`;
   } else {
-    elEtacConsumer.style.height = `calc(${
-      (calculateConsumerEtacResult / 5500) * 100
-    }% + 5%)`;
+    elEtacConsumer.style.height = `10%`;
   }
 
   if ((calculateConsumerProfitsResult / 130) * 140 > 10) {
@@ -241,9 +235,7 @@ const calculateConsumer = () => {
       calculateConsumerConventionalResult <= 0.4
         ? `0.5`
         : `${customRound(calculateConsumerProfitsResult)}`;
-    elProfitsConsumer.style.height = `calc(${
-      (calculateConsumerProfitsResult / 130) * 140
-    }% + 10%)`;
+    elProfitsConsumer.style.height = `10%`;
   }
 };
 
