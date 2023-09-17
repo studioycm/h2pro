@@ -149,10 +149,9 @@ const calculateDeveloper = () => {
     elEtac.style.height = `7%`;
   }
 
-  valueProfits.innerText =
-    Number(calcProfitsValue) < 0.6 ? `0.5` : `${customRound(calcProfitsValue)}`;
-
-  elProfits.style.height = `calc(${(calcProfitsValue / 4930) * 100}% + 25%)`;
+  valueProfits.innerText = `${Number(calcProfitsValue)}`;
+  
+  elProfits.style.height = `calc(${(calcProfitsValue / 4930) * 100}%)`;
 };
 
 const calculateConsumer = () => {
