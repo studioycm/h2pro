@@ -133,20 +133,20 @@ const calculateDeveloper = () => {
 
   valueConvetional.innerText = customRound(calcConvetionalValue);
 
-  if ((calcConvetionalValue / 209) * 100 > 5) {
+  if ((calcConvetionalValue / 209) * 100 > 4) {
     elConvetional.style.height = `calc(${
       (calcConvetionalValue / 209) * 100
     }% )`;
   } else {
-    elConvetional.style.height = `5%`;
+    elConvetional.style.height = `4%`;
   }
 
   valueEtac.innerText = customRound(calcEtacValue);
 
-  if ((calcEtacValue / 209) * 100 > 10) {
+  if ((calcEtacValue / 209) * 100 > 7) {
     elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}%)`;
   } else {
-    elEtac.style.height = `10%`;
+    elEtac.style.height = `7%`;
   }
 
   valueProfits.innerText =
