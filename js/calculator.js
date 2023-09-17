@@ -133,7 +133,7 @@ const calculateDeveloper = () => {
 
   valueConvetional.innerText = customRound(calcConvetionalValue);
 
-  if ((calcConvetionalValue / 209) * 100 > 10) {
+  if ((calcConvetionalValue / 209) * 100 > 5) {
     elConvetional.style.height = `calc(${
       (calcConvetionalValue / 209) * 100
     }% )`;
