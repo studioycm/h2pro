@@ -143,10 +143,10 @@ const calculateDeveloper = () => {
 
   valueEtac.innerText = customRound(calcEtacValue);
 
-  if ((calcEtacValue / 209) * 100 > 15) {
+  if ((calcEtacValue / 209) * 100 > 10) {
     elEtac.style.height = `calc(${(calcEtacValue / 209) * 100}%)`;
   } else {
-    elEtac.style.height = `15%`;
+    elEtac.style.height = `10%`;
   }
 
   valueProfits.innerText =
