@@ -1,9 +1,10 @@
 // Global constants
-const eTacKWH = 1 / 42;
-const convKWH = 1 / 55;
 const eTacPCmod = 42;
 const convPCmod = 55;
+const eTacKWH = 1 / eTacPCmod;
+const convKWH = 1 / convPCmod;
 const developerProfitModifier = 20;
+const consumerProfitModifier = 0.001;
 const maxValueCapacity = 8760;
 
 // DOM elements
@@ -26,6 +27,10 @@ const elEtacConsumer = document.getElementById("el-etac-consumer");
 const valueEtacConsumer = document.getElementById("value-etac-consumer");
 const elProfitsConsumer = document.getElementById("el-profits-consumer");
 const valueProfitsConsumer = document.getElementById("value-profits-consumer");
+
+// Calculate the percentage heights for each bar
+const maxEtacCalc = valueSize.max * maxValueCapacity * eTacKWH * consumerProfitModifier;
+console.log("maxEtacCalc = " + maxEtacCalc);
 
 // developer min and max
 const etacMinValue = 4;
@@ -61,11 +66,11 @@ const profitMaxHeight = 100; // in percentage, adjust as needed
 
 // Calculation functions
 function calculateDeveloperConventional(D2, D3) {
-  return D2 * D3 * convKWH * 0.001;
+  return D2 * D3 * convKWH * consumerProfitModifier;
 }
 
 function calculateDeveloperEtac(D2, D3) {
-  return D2 * D3 * eTacKWH * 0.001;
+  return D2 * D3 * eTacKWH * consumerProfitModifier;
 }
 
 function calculateDeveloperProfits(I2, I3, D4) {
@@ -81,7 +86,7 @@ function calculateConsumerEtac(D2) {
 }
 
 function calculateConsumerProfits(I2, I3, D3) {
-  return (I2 - I3) * D3 * 0.001;
+  return (I2 - I3) * D3 * consumerProfitModifier;
 }
 
 // Custom round function
@@ -102,17 +107,15 @@ function updateBarsAndLabels() {
   const calcConsumerEtac = calculateConsumerEtac(Number(valueHydrogenConsumer.value));
   const calcConsumerProfits = calculateConsumerProfits(calcConsumerConventional, calcConsumerEtac, Number(valueCostElectricity.value));
 
-  // Calculate the percentage heights for each bar
-  const maxEtacCalc = valueSize.max * maxValueCapacity * eTacKWH * 0.001;
-  const maxConvCalc = valueSize.max * maxValueCapacity * convKWH * 0.001;
+  
 
-  // const developerConventionalHeight = Math.max(5, (calcDeveloperConventional / maxConvCalc) * 100);
+  // const developerConventionalHeight = Math.max(5, (calcDeveloperConventional / maxEtacCalc) * 100);
   // const developerEtacHeight = Math.max(15, (calcDeveloperEtac / maxEtacCalc) * 100);
   // const developerProfitsHeight = Math.max(20, (calcDeveloperProfits / ((maxEtacCalc - maxConvCalc) * valueHydrogen.getAttribute("max") * developerProfitModifier)) * 100);
 
   // const consumerConventionalHeight = Math.max(15, (calcConsumerConventional / (valueHydrogenConsumer.getAttribute("max") * convPCmod)) * 100);
   // const consumerEtacHeight = Math.max(5, (calcConsumerEtac / (valueHydrogenConsumer.getAttribute("max") * eTacPCmod)) * 100);
-  // const consumerProfitsHeight = Math.max(20, (calcConsumerProfits / ((valueHydrogenConsumer.getAttribute("max") * convPCmod - valueHydrogenConsumer.getAttribute("max") * eTacPCmod) * valueCostElectricity.max * 0.001)) * 100);
+  // const consumerProfitsHeight = Math.max(20, (calcConsumerProfits / ((valueHydrogenConsumer.getAttribute("max") * convPCmod - valueHydrogenConsumer.getAttribute("max") * eTacPCmod) * valueCostElectricity.max * consumerProfitModifier)) * 100);
 
   const etacHeightPercentage = etacMinHeight + ((calcDeveloperEtac - etacMinValue) / (etacMaxValue - etacMinValue)) * (etacMaxHeight - etacMinHeight);
   const conventionalHeightPercentage = conventionalMinHeight + ((calcDeveloperConventional - conventionalMinValue) / (conventionalMaxValue - conventionalMinValue)) * (conventionalMaxHeight - conventionalMinHeight);
