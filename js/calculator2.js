@@ -27,6 +27,22 @@ const valueEtacConsumer = document.getElementById("value-etac-consumer");
 const elProfitsConsumer = document.getElementById("el-profits-consumer");
 const valueProfitsConsumer = document.getElementById("value-profits-consumer");
 
+const etacMinValue = 4;
+const etacMaxValue = 209;
+const etacMinHeight = 15; // in percentage
+const etacMaxHeight = 100; // in percentage
+
+const conventionalMinValue = 3;
+const conventionalMaxValue = 209;
+const conventionalMinHeight = 10; // in percentage
+const conventionalMaxHeight = 100; // in percentage, adjust as needed
+
+const profitMinValue = 17;
+const profitMaxValue = 4930;
+const profitMinHeight = 20; // in percentage
+const profitMaxHeight = 100; // in percentage, adjust as needed
+
+
 // Calculation functions
 function calculateDeveloperConventional(D2, D3) {
   return D2 * D3 * convKWH * 0.001;
@@ -76,20 +92,25 @@ function updateBarsAndLabels() {
 
   const developerConventionalHeight = Math.max(5, (calcDeveloperConventional / maxConvCalc) * 100);
   const developerEtacHeight = Math.max(15, (calcDeveloperEtac / maxEtacCalc) * 100);
-  const developerProfitsHeight = Math.max(20, (calcDeveloperProfits / ((maxEtacCalc - maxConvCalc) * valueHydrogen.max * developerProfitModifier)) * 100);
+  const developerProfitsHeight = Math.max(20, (calcDeveloperProfits / ((maxEtacCalc - maxConvCalc) * valueHydrogen.getAttribute("max") * developerProfitModifier)) * 100);
 
-  const consumerConventionalHeight = Math.max(15, (calcConsumerConventional / (valueHydrogenConsumer.max * convPCmod)) * 100);
-  const consumerEtacHeight = Math.max(5, (calcConsumerEtac / (valueHydrogenConsumer.max * eTacPCmod)) * 100);
-  const consumerProfitsHeight = Math.max(20, (calcConsumerProfits / ((valueHydrogenConsumer.max * convPCmod - valueHydrogenConsumer.max * eTacPCmod) * valueCostElectricity.max * 0.001)) * 100);
+  const consumerConventionalHeight = Math.max(15, (calcConsumerConventional / (valueHydrogenConsumer.getAttribute("max") * convPCmod)) * 100);
+  const consumerEtacHeight = Math.max(5, (calcConsumerEtac / (valueHydrogenConsumer.getAttribute("max") * eTacPCmod)) * 100);
+  const consumerProfitsHeight = Math.max(20, (calcConsumerProfits / ((valueHydrogenConsumer.getAttribute("max") * convPCmod - valueHydrogenConsumer.getAttribute("max") * eTacPCmod) * valueCostElectricity.max * 0.001)) * 100);
 
+  const etacHeightPercentage = etacMinHeight + ((etacMaxHeight - etacMinHeight) * (calcDeveloperEtac - etacMinValue)) / (etacMaxValue - etacMinValue);
+  const conventionalHeightPercentage = conventionalMinHeight + ((conventionalMaxHeight - conventionalMinHeight) * (calcDeveloperConventional - conventionalMinValue)) / (conventionalMaxValue - conventionalMinValue);
+  const profitHeightPercentage = profitMinHeight + ((profitMaxHeight - profitMinHeight) * (calcDeveloperProfits - profitMinValue)) / (profitMaxValue - profitMinValue);
+  
+  
   // Update the bar heights and value labels in the DOM
-  elConvetional.style.height = `${developerConventionalHeight}%`;
+  elConvetional.style.height = `${conventionalHeightPercentage}%`;
   valueConvetional.innerText = customRound(calcDeveloperConventional);
 
-  elEtac.style.height = `${developerEtacHeight}%`;
+  elEtac.style.height = `${etacHeightPercentage}%`;
   valueEtac.innerText = customRound(calcDeveloperEtac);
 
-  elProfits.style.height = `${developerProfitsHeight}%`;
+  elProfits.style.height = `${profitHeightPercentage}%`;
   valueProfits.innerText = customRound(calcDeveloperProfits);
 
   elConvetionalConsumer.style.height = `${consumerConventionalHeight}%`;
