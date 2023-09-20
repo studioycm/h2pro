@@ -146,7 +146,7 @@ function updateBarsAndLabels() {
 
   // move the bar label above or below top of the bar
 
-  if ((calcDeveloperConventional / 159) * 100 < 30) {
+  if ((calcDeveloperConventional / etacMaxValue) * 100 < 30) {
     if (!valueConvetional.parentElement.classList.contains("active")) {
       valueConvetional.parentElement.classList.add("active");
     }
@@ -156,7 +156,7 @@ function updateBarsAndLabels() {
     }
   }
 
-  if ((calcDeveloperEtac / 209) * 100 < 30) {
+  if ((calcDeveloperEtac / etacMaxValue) * 100 < 30) {
     if (!valueEtac.parentElement.classList.contains("active")) {
       valueEtac.parentElement.classList.add("active");
     }
@@ -166,7 +166,7 @@ function updateBarsAndLabels() {
     }
   }
 
-  if ((calcDeveloperProfits / 4930) * 100 < 15) {
+  if ((calcDeveloperProfits / profitMaxValue) * 100 < 20) {
     if (!valueProfits.parentElement.classList.contains("active")) {
       valueProfits.parentElement.classList.add("active");
     }
@@ -176,7 +176,7 @@ function updateBarsAndLabels() {
     }
   }
 
-   if ((calcConsumerConventional / 11000) * 100 < 15) {
+   if ((calcConsumerConventional / (conventionalMaxValueConsumer * 2)) * 100 < 15) {
     if (!valueConvetionalConsumer.parentElement.classList.contains("active")) {
       valueConvetionalConsumer.parentElement.classList.add("active");
     }
@@ -186,7 +186,7 @@ function updateBarsAndLabels() {
     }
   }
 
-  if ((calcConsumerEtac / 8400) * 100 < 15) {
+  if ((calcConsumerEtac / (conventionalMaxValueConsumer * 2)) * 100 < 15) {
     if (!valueEtacConsumer.parentElement.classList.contains("active")) {
       valueEtacConsumer.parentElement.classList.add("active");
     }
@@ -196,7 +196,7 @@ function updateBarsAndLabels() {
     }
   }
 
-  if ((calcConsumerProfits / 260) * 100 < 15) {
+  if ((calcConsumerProfits / (profitMaxValueConsumer * 2)) * 100 < 15) {
     if (!valueProfitsConsumer.parentElement.classList.contains("active")) {
       valueProfitsConsumer.parentElement.classList.add("active");
     }
