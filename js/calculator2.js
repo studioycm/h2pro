@@ -74,13 +74,13 @@ function updateBarsAndLabels() {
   const maxEtacCalc = valueSize.max * maxValueCapacity * eTacKWH * 0.001;
   const maxConvCalc = valueSize.max * maxValueCapacity * convKWH * 0.001;
 
-  const developerConventionalHeight = Math.max(10, (calcDeveloperConventional / maxConvCalc) * 100);
-  const developerEtacHeight = Math.max(10, (calcDeveloperEtac / maxEtacCalc) * 100);
-  const developerProfitsHeight = Math.max(10, (calcDeveloperProfits / ((maxEtacCalc - maxConvCalc) * valueHydrogen.max * developerProfitModifier)) * 100);
+  const developerConventionalHeight = Math.max(5, (calcDeveloperConventional / maxConvCalc) * 100);
+  const developerEtacHeight = Math.max(15, (calcDeveloperEtac / maxEtacCalc) * 100);
+  const developerProfitsHeight = Math.max(20, (calcDeveloperProfits / ((maxEtacCalc - maxConvCalc) * valueHydrogen.max * developerProfitModifier)) * 100);
 
-  const consumerConventionalHeight = Math.max(10, (calcConsumerConventional / (valueHydrogenConsumer.max * convPCmod)) * 100);
-  const consumerEtacHeight = Math.max(10, (calcConsumerEtac / (valueHydrogenConsumer.max * eTacPCmod)) * 100);
-  const consumerProfitsHeight = Math.max(10, (calcConsumerProfits / ((valueHydrogenConsumer.max * convPCmod - valueHydrogenConsumer.max * eTacPCmod) * valueCostElectricity.max * 0.001)) * 100);
+  const consumerConventionalHeight = Math.max(15, (calcConsumerConventional / (valueHydrogenConsumer.max * convPCmod)) * 100);
+  const consumerEtacHeight = Math.max(5, (calcConsumerEtac / (valueHydrogenConsumer.max * eTacPCmod)) * 100);
+  const consumerProfitsHeight = Math.max(20, (calcConsumerProfits / ((valueHydrogenConsumer.max * convPCmod - valueHydrogenConsumer.max * eTacPCmod) * valueCostElectricity.max * 0.001)) * 100);
 
   // Update the bar heights and value labels in the DOM
   elConvetional.style.height = `${developerConventionalHeight}%`;
