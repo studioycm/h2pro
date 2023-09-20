@@ -110,15 +110,17 @@ function updateBarsAndLabels() {
   // const developerEtacHeight = Math.max(15, (calcDeveloperEtac / maxEtacCalc) * 100);
   // const developerProfitsHeight = Math.max(20, (calcDeveloperProfits / ((maxEtacCalc - maxConvCalc) * valueHydrogen.getAttribute("max") * developerProfitModifier)) * 100);
 
-  const consumerConventionalHeight = Math.max(15, (calcConsumerConventional / (valueHydrogenConsumer.getAttribute("max") * convPCmod)) * 100);
-  const consumerEtacHeight = Math.max(5, (calcConsumerEtac / (valueHydrogenConsumer.getAttribute("max") * eTacPCmod)) * 100);
-  const consumerProfitsHeight = Math.max(20, (calcConsumerProfits / ((valueHydrogenConsumer.getAttribute("max") * convPCmod - valueHydrogenConsumer.getAttribute("max") * eTacPCmod) * valueCostElectricity.max * 0.001)) * 100);
+  // const consumerConventionalHeight = Math.max(15, (calcConsumerConventional / (valueHydrogenConsumer.getAttribute("max") * convPCmod)) * 100);
+  // const consumerEtacHeight = Math.max(5, (calcConsumerEtac / (valueHydrogenConsumer.getAttribute("max") * eTacPCmod)) * 100);
+  // const consumerProfitsHeight = Math.max(20, (calcConsumerProfits / ((valueHydrogenConsumer.getAttribute("max") * convPCmod - valueHydrogenConsumer.getAttribute("max") * eTacPCmod) * valueCostElectricity.max * 0.001)) * 100);
 
   const etacHeightPercentage = etacMinHeight + ((calcDeveloperEtac - etacMinValue) / (etacMaxValue - etacMinValue)) * (etacMaxHeight - etacMinHeight);
   const conventionalHeightPercentage = conventionalMinHeight + ((calcDeveloperConventional - conventionalMinValue) / (conventionalMaxValue - conventionalMinValue)) * (conventionalMaxHeight - conventionalMinHeight);
   const profitHeightPercentage = profitMinHeight + ((calcDeveloperProfits - profitMinValue) / (profitMaxValue - profitMinValue)) * (profitMaxHeight - profitMinHeight);
   
-
+  const etacHeightPercentageConsumer = etacMinHeightConsumer + ((calcConsumerEtac  - etacMinValueConsumer) / (etacMaxValueConsumer - etacMinValueConsumer)) * (etacMaxHeightConsumer - etacMinHeightConsumer);
+  const conventionalHeightPercentageConsumer = conventionalMinHeightConsumer  + ((calcConsumerConventional - conventionalMinValue) / (conventionalMaxValueConsumer - conventionalMinValueConsumer)) * (conventionalMaxHeightConsumer  - conventionalMinHeightConsumer );
+  const profitHeightPercentageConsumer = profitMinHeight + ((calcConsumerProfits  - profitMinValueConsumer ) / (profitMaxValueConsumer  - profitMinValueConsumer )) * (profitMaxHeight - profitMinHeight);
   
   // Update the bar heights and value labels in the DOM
   elConvetional.style.height = `${conventionalHeightPercentage}%`;
