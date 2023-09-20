@@ -27,6 +27,7 @@ const valueEtacConsumer = document.getElementById("value-etac-consumer");
 const elProfitsConsumer = document.getElementById("el-profits-consumer");
 const valueProfitsConsumer = document.getElementById("value-profits-consumer");
 
+// developer min and max
 const etacMinValue = 4;
 const etacMaxValue = 209;
 const etacMinHeight = 15; // in percentage
@@ -39,9 +40,24 @@ const conventionalMaxHeight = 100; // in percentage, adjust as needed
 
 const profitMinValue = 17;
 const profitMaxValue = 4930;
+
+// consumer min and max
+const etacMinValueConsumer = 420;
+const etacMaxValueConsumer = 5500;
+const etacMinHeightConsumer = 10; // in percentage
+const etacMaxHeightConsumer = 100; // in percentage
+
+const conventionalMinValueConsumer = 550;
+const conventionalMaxValueConsumer = 5500;
+const conventionalMinHeightConsumer = 15; // in percentage
+const conventionalMaxHeightConsumer = 100; // in percentage, adjust as needed
+
+const profitMinValueConsumer = 1;
+const profitMaxValueConsumer = 130;
+
+// profits min and max
 const profitMinHeight = 20; // in percentage
 const profitMaxHeight = 100; // in percentage, adjust as needed
-
 
 // Calculation functions
 function calculateDeveloperConventional(D2, D3) {
@@ -90,18 +106,19 @@ function updateBarsAndLabels() {
   const maxEtacCalc = valueSize.max * maxValueCapacity * eTacKWH * 0.001;
   const maxConvCalc = valueSize.max * maxValueCapacity * convKWH * 0.001;
 
-  const developerConventionalHeight = Math.max(5, (calcDeveloperConventional / maxConvCalc) * 100);
-  const developerEtacHeight = Math.max(15, (calcDeveloperEtac / maxEtacCalc) * 100);
-  const developerProfitsHeight = Math.max(20, (calcDeveloperProfits / ((maxEtacCalc - maxConvCalc) * valueHydrogen.getAttribute("max") * developerProfitModifier)) * 100);
+  // const developerConventionalHeight = Math.max(5, (calcDeveloperConventional / maxConvCalc) * 100);
+  // const developerEtacHeight = Math.max(15, (calcDeveloperEtac / maxEtacCalc) * 100);
+  // const developerProfitsHeight = Math.max(20, (calcDeveloperProfits / ((maxEtacCalc - maxConvCalc) * valueHydrogen.getAttribute("max") * developerProfitModifier)) * 100);
 
   const consumerConventionalHeight = Math.max(15, (calcConsumerConventional / (valueHydrogenConsumer.getAttribute("max") * convPCmod)) * 100);
   const consumerEtacHeight = Math.max(5, (calcConsumerEtac / (valueHydrogenConsumer.getAttribute("max") * eTacPCmod)) * 100);
   const consumerProfitsHeight = Math.max(20, (calcConsumerProfits / ((valueHydrogenConsumer.getAttribute("max") * convPCmod - valueHydrogenConsumer.getAttribute("max") * eTacPCmod) * valueCostElectricity.max * 0.001)) * 100);
 
-  const etacHeightPercentage = etacMinHeight + ((etacMaxHeight - etacMinHeight) * (calcDeveloperEtac - etacMinValue)) / (etacMaxValue - etacMinValue);
-  const conventionalHeightPercentage = conventionalMinHeight + ((conventionalMaxHeight - conventionalMinHeight) * (calcDeveloperConventional - conventionalMinValue)) / (conventionalMaxValue - conventionalMinValue);
-  const profitHeightPercentage = profitMinHeight + ((profitMaxHeight - profitMinHeight) * (calcDeveloperProfits - profitMinValue)) / (profitMaxValue - profitMinValue);
+  const etacHeightPercentage = etacMinHeight + ((calcDeveloperEtac - etacMinValue) / (etacMaxValue - etacMinValue)) * (etacMaxHeight - etacMinHeight);
+  const conventionalHeightPercentage = conventionalMinHeight + ((calcDeveloperConventional - conventionalMinValue) / (conventionalMaxValue - conventionalMinValue)) * (conventionalMaxHeight - conventionalMinHeight);
+  const profitHeightPercentage = profitMinHeight + ((calcDeveloperProfits - profitMinValue) / (profitMaxValue - profitMinValue)) * (profitMaxHeight - profitMinHeight);
   
+
   
   // Update the bar heights and value labels in the DOM
   elConvetional.style.height = `${conventionalHeightPercentage}%`;
@@ -121,6 +138,70 @@ function updateBarsAndLabels() {
 
   elProfitsConsumer.style.height = `${consumerProfitsHeight}%`;
   valueProfitsConsumer.innerText = customRound(calcConsumerProfits);
+
+  // move the bar label above or below top of the bar
+
+  if ((calcDeveloperConventional / 159) * 100 < 30) {
+    if (!valueConvetional.parentElement.classList.contains("active")) {
+      valueConvetional.parentElement.classList.add("active");
+    }
+  } else {
+    if (valueConvetional.parentElement.classList.contains("active")) {
+      valueConvetional.parentElement.classList.remove("active");
+    }
+  }
+
+  if ((calcDeveloperEtac / 209) * 100 < 30) {
+    if (!valueEtac.parentElement.classList.contains("active")) {
+      valueEtac.parentElement.classList.add("active");
+    }
+  } else {
+    if (valueEtac.parentElement.classList.contains("active")) {
+      valueEtac.parentElement.classList.remove("active");
+    }
+  }
+
+  if ((calcDeveloperProfits / 4930) * 100 < 15) {
+    if (!valueProfits.parentElement.classList.contains("active")) {
+      valueProfits.parentElement.classList.add("active");
+    }
+  } else {
+    if (valueProfits.parentElement.classList.contains("active")) {
+      valueProfits.parentElement.classList.remove("active");
+    }
+  }
+
+   if ((calcConsumerConventional / 11000) * 100 < 15) {
+    if (!valueConvetionalConsumer.parentElement.classList.contains("active")) {
+      valueConvetionalConsumer.parentElement.classList.add("active");
+    }
+  } else {
+    if (valueConvetionalConsumer.parentElement.classList.contains("active")) {
+      valueConvetionalConsumer.parentElement.classList.remove("active");
+    }
+  }
+
+  if ((calcConsumerEtac / 8400) * 100 < 15) {
+    if (!valueEtacConsumer.parentElement.classList.contains("active")) {
+      valueEtacConsumer.parentElement.classList.add("active");
+    }
+  } else {
+    if (valueEtacConsumer.parentElement.classList.contains("active")) {
+      valueEtacConsumer.parentElement.classList.remove("active");
+    }
+  }
+
+  if ((calcConsumerProfits / 260) * 100 < 15) {
+    if (!valueProfitsConsumer.parentElement.classList.contains("active")) {
+      valueProfitsConsumer.parentElement.classList.add("active");
+    }
+  } else {
+    if (valueProfitsConsumer.parentElement.classList.contains("active")) {
+      valueProfitsConsumer.parentElement.classList.remove("active");
+    }
+  }
+  
+  
 }
 
 // Event listeners for input changes
