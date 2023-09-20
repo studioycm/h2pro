@@ -248,6 +248,12 @@ input {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 1px 0px;
 }
 
+.definitions-calculator-input-range,
+.definitions-calculator-input-range-slider {
+    cursor: grab;
+}
+
+
 .definitions-calculator-input-min {
   position: absolute;
   top: 20px;
