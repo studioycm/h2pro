@@ -135,13 +135,13 @@ function updateBarsAndLabels() {
   elProfits.style.height = `${profitHeightPercentage}%`;
   valueProfits.innerText = customRound(calcDeveloperProfits);
 
-  elConvetionalConsumer.style.height = `${consumerConventionalHeight}%`;
+  elConvetionalConsumer.style.height = `${conventionalHeightPercentageConsumer}%`;
   valueConvetionalConsumer.innerText = customRound(calcConsumerConventional);
 
-  elEtacConsumer.style.height = `${consumerEtacHeight}%`;
+  elEtacConsumer.style.height = `${etacHeightPercentageConsumer}%`;
   valueEtacConsumer.innerText = customRound(calcConsumerEtac);
 
-  elProfitsConsumer.style.height = `${consumerProfitsHeight}%`;
+  elProfitsConsumer.style.height = `${profitHeightPercentageConsumer}%`;
   valueProfitsConsumer.innerText = customRound(calcConsumerProfits);
 
   // move the bar label above or below top of the bar
