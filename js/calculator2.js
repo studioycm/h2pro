@@ -145,7 +145,9 @@ function updateBarsAndLabels() {
   valueProfitsConsumer.innerText = customRound(calcConsumerProfits);
 
   // move the bar label above or below top of the bar
-
+  let calc = (calcDeveloperConventional / etacMaxValue) * 100;
+  console.log("conventional less then 30:" + calc);
+  
   if ((calcDeveloperConventional / etacMaxValue) * 100 < 30) {
     if (!valueConvetional.parentElement.classList.contains("active")) {
       valueConvetional.parentElement.classList.add("active");
