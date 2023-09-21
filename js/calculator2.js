@@ -51,12 +51,12 @@ const profitMaxValue = 4930;
 // consumer min and max
 const etacMinValueConsumer = 420;
 const etacMaxValueConsumer = 5500;
-const etacMinHeightConsumer = 9; // in percentage
+const etacMinHeightConsumer = 7.5; // in percentage
 const etacMaxHeightConsumer = 100; // in percentage
 
 const conventionalMinValueConsumer = 550;
 const conventionalMaxValueConsumer = 5500;
-const conventionalMinHeightConsumer = 12; // in percentage
+const conventionalMinHeightConsumer = 15; // in percentage
 const conventionalMaxHeightConsumer = 100; // in percentage, adjust as needed
 
 const profitMinValueConsumer = 1;
