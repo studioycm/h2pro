@@ -43,6 +43,8 @@ const conventionalMaxValue = 209;
 const conventionalMinHeight = 6; // in percentage
 const conventionalMaxHeight = 100; // in percentage, adjust as needed
 
+let conventionalHeightMod = -2;
+
 const profitMinValue = 17;
 const profitMaxValue = 4930;
 
@@ -118,7 +120,7 @@ function updateBarsAndLabels() {
   // const consumerProfitsHeight = Math.max(20, (calcConsumerProfits / ((valueHydrogenConsumer.getAttribute("max") * convPCmod - valueHydrogenConsumer.getAttribute("max") * eTacPCmod) * valueCostElectricity.max * consumerProfitModifier)) * 100);
 
   const etacHeightPercentage = etacMinHeight + ((calcDeveloperEtac - etacMinValue) / (etacMaxValue - etacMinValue)) * (etacMaxHeight - etacMinHeight);
-  const conventionalHeightPercentage = conventionalMinHeight + ((calcDeveloperConventional - conventionalMinValue) / (conventionalMaxValue - conventionalMinValue)) * (conventionalMaxHeight - conventionalMinHeight);
+  const conventionalHeightPercentage = ( conventionalMinHeight + ((calcDeveloperConventional - conventionalMinValue) / (conventionalMaxValue - conventionalMinValue)) * (conventionalMaxHeight - conventionalMinHeight) ) + conventionalHeightMod;
   const profitHeightPercentage = profitMinHeight + ((calcDeveloperProfits - profitMinValue) / (profitMaxValue - profitMinValue)) * (profitMaxHeight - profitMinHeight);
   
   const etacHeightPercentageConsumer = etacMinHeightConsumer + ((calcConsumerEtac  - etacMinValueConsumer) / (etacMaxValueConsumer - etacMinValueConsumer)) * (etacMaxHeightConsumer - etacMinHeightConsumer);
