@@ -668,7 +668,7 @@ input {
   }
   
   .definitions-graph-item-desc {
-      min-height: 65px;
+      min-height: 45px;
   }
   
 }
@@ -678,4 +678,8 @@ input {
     font-size: 14px;
     padding: 8px 15px;
   }
+  .definitions-graph-item-desc {
+      min-height: 65px;
+  }
+  
 }
