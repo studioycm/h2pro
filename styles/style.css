@@ -131,10 +131,10 @@ input {
 
 .definitions-calculator-categories-info-text {
     position: absolute;
-    left: auto;
-    top: auto;
-    right: 0;
-    bottom: calc(-100% - 40px);
+    left: 0;
+    top: calc(100% + 40px);
+    right: auto;
+    bottom: auto;
     width: 310px;
     padding: 15px 15px;
     border: 1px solid #eee;
@@ -145,6 +145,7 @@ input {
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
+    background-color: #fff;
     color: #939ba2;
     opacity: 0;
     pointer-events: none;
