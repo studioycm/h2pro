@@ -101,19 +101,7 @@ input {
   transition: background 250ms linear;
 }
 
-@media screen and (max-width: 1370px) {
-  .definitions-calculator-categories-button {
-    font-size: 16px;
-    padding: 15px;
-  }
-}
 
-@media screen and (max-width: 1280px) {
-  .definitions-calculator-categories-button {
-    font-size: 14px;
-    padding: 8px 15px;
-  }
-}
 
 .definitions-calculator-categories-button.active {
   background: #dde6f5;
@@ -605,6 +593,8 @@ input {
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  justify-content: flex-end;
+  padding-bottom: 56px;
 }
 
 .definitions-graph-item-desc {
@@ -617,8 +607,13 @@ input {
   line-height: 130%; /* 26px */
   max-width: 194px;
   width: 100%;
+  min-height: unset;
 }
 
+.definitions-graph-item {
+      
+  }
+  
 .definitions-graph-item-desc-first {
   color: #363b40;
   text-align: center;
@@ -651,4 +646,36 @@ input {
   line-height: 130%; /* 26px */
   max-width: 182px;
   margin: 0 auto;
+}
+
+
+@media screen and (max-width: 1370px) {
+  .definitions-calculator-categories-button {
+    font-size: 16px;
+    padding: 15px;
+  }
+  .definitions-graph-developer {
+      gap: 40px;
+  }
+  
+  .definitions-calculator-block {
+      margin-bottom: 60px;
+  }
+  
+  .definitions-graph-item {
+      justify-content: flex-end;
+      padding-bottom: 36px;
+  }
+  
+  .definitions-graph-item-desc {
+      min-height: 65px;
+  }
+  
+}
+
+@media screen and (max-width: 1280px) {
+  .definitions-calculator-categories-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
 }
