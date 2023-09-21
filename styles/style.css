@@ -664,7 +664,7 @@ input {
   
   .definitions-graph-item {
       justify-content: flex-end;
-      padding-bottom: 20px;
+      padding-bottom: 36px;
   }
   
   .definitions-graph-item-desc {
@@ -679,7 +679,7 @@ input {
     padding: 8px 15px;
   }
   .definitions-graph-item {
-      padding-bottom: 35px;
+      padding-bottom: 20px;
   }
   .definitions-graph-item-desc {
       min-height: 65px;
