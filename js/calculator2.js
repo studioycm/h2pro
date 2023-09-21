@@ -35,12 +35,12 @@ console.log("maxEtacCalc = " + maxEtacCalc);
 // developer min and max
 const etacMinValue = 4;
 const etacMaxValue = 209;
-const etacMinHeight = 15; // in percentage
+const etacMinHeight = 12; // in percentage
 const etacMaxHeight = 100; // in percentage
 
 const conventionalMinValue = 3;
 const conventionalMaxValue = 209;
-const conventionalMinHeight = 8; // in percentage
+const conventionalMinHeight = 9; // in percentage
 const conventionalMaxHeight = 100; // in percentage, adjust as needed
 
 const profitMinValue = 17;
@@ -49,12 +49,12 @@ const profitMaxValue = 4930;
 // consumer min and max
 const etacMinValueConsumer = 420;
 const etacMaxValueConsumer = 5500;
-const etacMinHeightConsumer = 7; // in percentage
+const etacMinHeightConsumer = 9; // in percentage
 const etacMaxHeightConsumer = 100; // in percentage
 
 const conventionalMinValueConsumer = 550;
 const conventionalMaxValueConsumer = 5500;
-const conventionalMinHeightConsumer = 10; // in percentage
+const conventionalMinHeightConsumer = 12; // in percentage
 const conventionalMaxHeightConsumer = 100; // in percentage, adjust as needed
 
 const profitMinValueConsumer = 1;
@@ -122,7 +122,7 @@ function updateBarsAndLabels() {
   const profitHeightPercentage = profitMinHeight + ((calcDeveloperProfits - profitMinValue) / (profitMaxValue - profitMinValue)) * (profitMaxHeight - profitMinHeight);
   
   const etacHeightPercentageConsumer = etacMinHeightConsumer + ((calcConsumerEtac  - etacMinValueConsumer) / (etacMaxValueConsumer - etacMinValueConsumer)) * (etacMaxHeightConsumer - etacMinHeightConsumer);
-  const conventionalHeightPercentageConsumer = conventionalMinHeightConsumer  + ((calcConsumerConventional - conventionalMinValue) / (conventionalMaxValueConsumer - conventionalMinValueConsumer)) * (conventionalMaxHeightConsumer  - conventionalMinHeightConsumer );
+  const conventionalHeightPercentageConsumer = conventionalMinHeightConsumer  + ((calcConsumerConventional - conventionalMinValueConsumer) / (conventionalMaxValueConsumer - conventionalMinValueConsumer)) * (conventionalMaxHeightConsumer  - conventionalMinHeightConsumer );
   const profitHeightPercentageConsumer = profitMinHeight + ((calcConsumerProfits  - profitMinValueConsumer ) / (profitMaxValueConsumer  - profitMinValueConsumer )) * (profitMaxHeight - profitMinHeight);
   
   // Update the bar heights and value labels in the DOM
