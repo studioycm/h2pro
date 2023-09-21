@@ -40,7 +40,7 @@ const etacMaxHeight = 100; // in percentage
 
 const conventionalMinValue = 3;
 const conventionalMaxValue = 209;
-const conventionalMinHeight = 10; // in percentage
+const conventionalMinHeight = 8; // in percentage
 const conventionalMaxHeight = 100; // in percentage, adjust as needed
 
 const profitMinValue = 17;
