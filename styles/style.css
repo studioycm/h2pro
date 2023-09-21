@@ -145,14 +145,14 @@ input {
 
 .definitions-calculator-categories-info-text {
     position: absolute;
-    left: 0;
-    top: calc(100% + 40px);
-    right: auto;
+    left: auto;
+    top: calc(100% + 20px);
+    right: 0;
     bottom: auto;
     width: 310px;
-    padding: 15px 15px;
+    padding: 8px;
     border: 1px solid #eee;
-    border-radius: 20px;
+    border-radius: 10px;
     z-index: 99;
     font-family: Geologica;
     font-size: 12px;
