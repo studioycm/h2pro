@@ -96,9 +96,23 @@ input {
   font-style: normal;
   font-weight: 400;
   line-height: 130%; /* 23.4px */
-  padding: 15px 30px;
+  padding: 15px 20px;
   border-radius: 50px;
   transition: background 250ms linear;
+}
+
+@media screen and (max-width: 1370px) {
+  .definitions-calculator-categories-button {
+    font-size: 16px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .definitions-calculator-categories-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
 }
 
 .definitions-calculator-categories-button.active {
