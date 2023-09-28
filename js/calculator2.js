@@ -150,7 +150,7 @@ function updateBarsAndLabels() {
   let calc = (calcDeveloperConventional / etacMaxValue) * 100;
   console.log("conventional less then 30:" + calc);
   
-  if ((calcDeveloperConventional / etacMaxValue) * 100 < 30) {
+  if ((calcDeveloperConventional / etacMaxValue) * 100 < 60) {
     if (!valueConvetional.parentElement.classList.contains("active")) {
       valueConvetional.parentElement.classList.add("active");
     }
@@ -160,7 +160,7 @@ function updateBarsAndLabels() {
     }
   }
 
-  if ((calcDeveloperEtac / etacMaxValue) * 100 < 30) {
+  if ((calcDeveloperEtac / etacMaxValue) * 100 < 60) {
     if (!valueEtac.parentElement.classList.contains("active")) {
       valueEtac.parentElement.classList.add("active");
     }
@@ -170,7 +170,7 @@ function updateBarsAndLabels() {
     }
   }
 
-  if ((calcDeveloperProfits / profitMaxValue) * 100 < 20) {
+  if ((calcDeveloperProfits / profitMaxValue) * 100 < 60) {
     if (!valueProfits.parentElement.classList.contains("active")) {
       valueProfits.parentElement.classList.add("active");
     }
@@ -180,7 +180,7 @@ function updateBarsAndLabels() {
     }
   }
 
-   if ((calcConsumerConventional / (conventionalMaxValueConsumer * 2)) * 100 < 15) {
+   if ((calcConsumerConventional / (conventionalMaxValueConsumer * 2)) * 100 < 30) {
     if (!valueConvetionalConsumer.parentElement.classList.contains("active")) {
       valueConvetionalConsumer.parentElement.classList.add("active");
     }
@@ -190,7 +190,7 @@ function updateBarsAndLabels() {
     }
   }
 
-  if ((calcConsumerEtac / (conventionalMaxValueConsumer * 2)) * 100 < 15) {
+  if ((calcConsumerEtac / (conventionalMaxValueConsumer * 2)) * 100 < 30) {
     if (!valueEtacConsumer.parentElement.classList.contains("active")) {
       valueEtacConsumer.parentElement.classList.add("active");
     }
@@ -200,7 +200,7 @@ function updateBarsAndLabels() {
     }
   }
 
-  if ((calcConsumerProfits / (profitMaxValueConsumer * 2)) * 100 < 15) {
+  if ((calcConsumerProfits / (profitMaxValueConsumer * 2)) * 100 < 30) {
     if (!valueProfitsConsumer.parentElement.classList.contains("active")) {
       valueProfitsConsumer.parentElement.classList.add("active");
     }
