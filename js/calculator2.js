@@ -28,7 +28,7 @@ const valueEtacConsumer = document.getElementById("value-etac-consumer");
 const elProfitsConsumer = document.getElementById("el-profits-consumer");
 const valueProfitsConsumer = document.getElementById("value-profits-consumer");
 
-const developerGraph = document.querySelector(".definitions-graph.developer");
+const developerGraph = document.querySelector(".definitions-graph-developer");
 
 // Calculate the percentage heights for each bar
 const maxEtacCalc = valueSize.max * maxValueCapacity * eTacKWH * consumerProfitModifier;
