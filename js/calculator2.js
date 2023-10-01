@@ -6,7 +6,7 @@ const convKWH = 1 / convPCmod;
 const developerProfitModifier = 20;
 const consumerProfitModifier = 0.001;
 const maxValueCapacity = 8760;
-const barLabelMaxHeight = 80; // in percentage
+const barLabelMaxHeight = 35; // in percentage
 
 // DOM elements
 const valueSize = document.getElementById("track1");
