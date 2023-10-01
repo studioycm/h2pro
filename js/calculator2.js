@@ -6,7 +6,7 @@ const convKWH = 1 / convPCmod;
 const developerProfitModifier = 20;
 const consumerProfitModifier = 0.001;
 const maxValueCapacity = 8760;
-const barLabelMaxHeight = 35; // in percentage
+const barLabelPositionTrigger = 30; // in percentage
 
 // DOM elements
 const valueSize = document.getElementById("track1");
@@ -143,14 +143,11 @@ function updateBarsAndLabels() {
   let calc = (calcDeveloperConventional / etacMaxValue) * 100;
   console.log("conventional less then 30:" + calc);
  
-  // move the bar label above or below top of the bar for all three bars based on the height of the highest bar
-  // check if the max percentage height out of the three bars is below 80% and if so, move the label above the bar by adding "active" class for all three bars
-  // if the max percentage height out of the three bars is above 80%, remove the "active" class for all three bars
-
+  // move the bar label above or below top of the bar for all three bars based on the height of the lowest bar
   // if developerGraph have class "active" then set maxBarHeight to max between developer etac and developer profit, else set maxBarHeight to max between consumer conventional and consumer profit
-  const maxBarHeight = developerGraph.classList.contains("active") ? Math.max(etacHeightPercentage, profitHeightPercentage) : Math.max(conventionalHeightPercentageConsumer, profitHeightPercentageConsumer);
-  console.log("maxBarHeight = " + maxBarHeight);
-  if (maxBarHeight < barLabelMaxHeight ) {
+  const minBarHeight = developerGraph.classList.contains("active") ? Math.min(conventionalHeightPercentage, profitHeightPercentage) : Math.min(etacHeightPercentageConsumer, profitHeightPercentageConsumer);
+  console.log("minBarHeight = " + minBarHeight);
+  if (minBarHeight < barLabelPositionTrigger ) {
     // better efficiant way to add class to all three bars only if it not already added
     document.querySelectorAll(".definitions-graph > .active .bar-label").forEach(el => {
       if (!el.classList.contains("active")) {
