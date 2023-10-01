@@ -1,15 +1,7 @@
-const calculatorDeveloper = document.querySelector(
-  ".definitions-calculator-developer"
-);
-
-const calculatorConsumer = document.querySelector(
-  ".definitions-calculator-consumer"
-);
-
+const calculatorDeveloper = document.querySelector(".definitions-calculator-developer");
+const calculatorConsumer = document.querySelector(".definitions-calculator-consumer");
 const graphDeveloper = document.querySelector(".definitions-graph-developer");
-
 const graphConsumer = document.querySelector(".definitions-graph-consumer");
-
 const buttons = document.querySelector(".definitions-calculator-categories");
 
 const switchButtons = ({ target }) => {
@@ -39,4 +31,25 @@ const switchButtons = ({ target }) => {
   }
 };
 
-buttons.addEventListener("click", switchButtons);
+// buttons.addEventListener("click", switchButtons);
+
+// diffrent toggle function, efficiant and shorter then the above - when button clicked then toggle active class for the two pairs of elements - calculators and graphs
+// the html initial state for the developer calculator and graph is they have "active" class already
+
+const toggleButtons = ({ target }) => {
+  if (target.nodeName !== "BUTTON") return;
+
+  Array.from(buttons.children).map((item) => {
+    item.classList.remove("active");
+  });
+
+  target.classList.add("active");
+
+  calculatorDeveloper.classList.toggle("active");
+  calculatorConsumer.classList.toggle("active");
+
+  graphDeveloper.classList.toggle("active");
+  graphConsumer.classList.toggle("active");
+}
+ 
+buttons.addEventListener("click", toggleButtons);

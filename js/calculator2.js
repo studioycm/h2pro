@@ -28,6 +28,8 @@ const valueEtacConsumer = document.getElementById("value-etac-consumer");
 const elProfitsConsumer = document.getElementById("el-profits-consumer");
 const valueProfitsConsumer = document.getElementById("value-profits-consumer");
 
+const developerGraph = document.querySelector(".definitions-graph.developer");
+
 // Calculate the percentage heights for each bar
 const maxEtacCalc = valueSize.max * maxValueCapacity * eTacKWH * consumerProfitModifier;
 console.log("maxEtacCalc = " + maxEtacCalc);
@@ -146,69 +148,95 @@ function updateBarsAndLabels() {
   elProfitsConsumer.style.height = `${profitHeightPercentageConsumer}%`;
   valueProfitsConsumer.innerText = customRound(calcConsumerProfits);
 
-  // move the bar label above or below top of the bar
+ 
   let calc = (calcDeveloperConventional / etacMaxValue) * 100;
   console.log("conventional less then 30:" + calc);
-  
-  if ((calcDeveloperConventional / etacMaxValue) * 100 < 60) {
-    if (!valueConvetional.parentElement.classList.contains("active")) {
-      valueConvetional.parentElement.classList.add("active");
-    }
-  } else {
-    if (valueConvetional.parentElement.classList.contains("active")) {
-      valueConvetional.parentElement.classList.remove("active");
-    }
+ 
+  // move the bar label above or below top of the bar for all three bars based on the height of the highest bar
+  // check if the max percentage height out of the three bars is below 60% and if so, move the label above the bar by adding "active" class for all three bars
+  // if the max percentage height out of the three bars is above 60%, remove the "active" class for all three bars
+
+  // check if max between etac and profit is below 60% and if so, move the label above the bar by adding "active" class for all three bars
+  // if developerGraph have class "active" then set maxBarHeight to max between developer etac and developer profit, else set maxBarHeight to max between consumer conventional and consumer profit
+  const maxBarHeight = developerGraph.classList.contains("active") ? Math.max(etacHeightPercentage, profitHeightPercentage) : Math.max(conventionalHeightPercentageConsumer, profitHeightPercentageConsumer);
+  console.log("maxBarHeight = " + maxBarHeight);
+  if (maxBarHeight < 60) {
+    // better efficiant way to add class to all three bars only if it not already added
+    document.querySelectorAll(".definitions-graph > .active .bar-label").forEach(el => {
+      if (!el.classList.contains("active")) {
+        el.classList.add("active");
+      }
+    });
+  }  else {
+    
+    // better efficiant way to remove class from all three bars (only from the ) only if it not already removed
+    document.querySelectorAll(".definitions-graph > .active .bar-label").forEach(el => {
+      if (el.classList.contains("active")) {
+        el.classList.remove("active");
+      }
+    });
   }
 
-  if ((calcDeveloperEtac / etacMaxValue) * 100 < 60) {
-    if (!valueEtac.parentElement.classList.contains("active")) {
-      valueEtac.parentElement.classList.add("active");
-    }
-  } else {
-    if (valueEtac.parentElement.classList.contains("active")) {
-      valueEtac.parentElement.classList.remove("active");
-    }
-  }
 
-  if ((calcDeveloperProfits / profitMaxValue) * 100 < 60) {
-    if (!valueProfits.parentElement.classList.contains("active")) {
-      valueProfits.parentElement.classList.add("active");
-    }
-  } else {
-    if (valueProfits.parentElement.classList.contains("active")) {
-      valueProfits.parentElement.classList.remove("active");
-    }
-  }
+  // if ((calcDeveloperConventional / etacMaxValue) * 100 < 60) {
+  //   if (!valueConvetional.parentElement.classList.contains("active")) {
+  //     valueConvetional.parentElement.classList.add("active");
+  //   }
+  // } else {
+  //   if (valueConvetional.parentElement.classList.contains("active")) {
+  //     valueConvetional.parentElement.classList.remove("active");
+  //   }
+  // }
 
-   if ((calcConsumerConventional / (conventionalMaxValueConsumer * 2)) * 100 < 30) {
-    if (!valueConvetionalConsumer.parentElement.classList.contains("active")) {
-      valueConvetionalConsumer.parentElement.classList.add("active");
-    }
-  } else {
-    if (valueConvetionalConsumer.parentElement.classList.contains("active")) {
-      valueConvetionalConsumer.parentElement.classList.remove("active");
-    }
-  }
+  // if ((calcDeveloperEtac / etacMaxValue) * 100 < 60) {
+  //   if (!valueEtac.parentElement.classList.contains("active")) {
+  //     valueEtac.parentElement.classList.add("active");
+  //   }
+  // } else {
+  //   if (valueEtac.parentElement.classList.contains("active")) {
+  //     valueEtac.parentElement.classList.remove("active");
+  //   }
+  // }
 
-  if ((calcConsumerEtac / (conventionalMaxValueConsumer * 2)) * 100 < 30) {
-    if (!valueEtacConsumer.parentElement.classList.contains("active")) {
-      valueEtacConsumer.parentElement.classList.add("active");
-    }
-  } else {
-    if (valueEtacConsumer.parentElement.classList.contains("active")) {
-      valueEtacConsumer.parentElement.classList.remove("active");
-    }
-  }
+  // if ((calcDeveloperProfits / profitMaxValue) * 100 < 60) {
+  //   if (!valueProfits.parentElement.classList.contains("active")) {
+  //     valueProfits.parentElement.classList.add("active");
+  //   }
+  // } else {
+  //   if (valueProfits.parentElement.classList.contains("active")) {
+  //     valueProfits.parentElement.classList.remove("active");
+  //   }
+  // }
 
-  if ((calcConsumerProfits / (profitMaxValueConsumer * 2)) * 100 < 30) {
-    if (!valueProfitsConsumer.parentElement.classList.contains("active")) {
-      valueProfitsConsumer.parentElement.classList.add("active");
-    }
-  } else {
-    if (valueProfitsConsumer.parentElement.classList.contains("active")) {
-      valueProfitsConsumer.parentElement.classList.remove("active");
-    }
-  }
+  //  if ((calcConsumerConventional / (conventionalMaxValueConsumer * 2)) * 100 < 30) {
+  //   if (!valueConvetionalConsumer.parentElement.classList.contains("active")) {
+  //     valueConvetionalConsumer.parentElement.classList.add("active");
+  //   }
+  // } else {
+  //   if (valueConvetionalConsumer.parentElement.classList.contains("active")) {
+  //     valueConvetionalConsumer.parentElement.classList.remove("active");
+  //   }
+  // }
+
+  // if ((calcConsumerEtac / (conventionalMaxValueConsumer * 2)) * 100 < 30) {
+  //   if (!valueEtacConsumer.parentElement.classList.contains("active")) {
+  //     valueEtacConsumer.parentElement.classList.add("active");
+  //   }
+  // } else {
+  //   if (valueEtacConsumer.parentElement.classList.contains("active")) {
+  //     valueEtacConsumer.parentElement.classList.remove("active");
+  //   }
+  // }
+
+  // if ((calcConsumerProfits / (profitMaxValueConsumer * 2)) * 100 < 30) {
+  //   if (!valueProfitsConsumer.parentElement.classList.contains("active")) {
+  //     valueProfitsConsumer.parentElement.classList.add("active");
+  //   }
+  // } else {
+  //   if (valueProfitsConsumer.parentElement.classList.contains("active")) {
+  //     valueProfitsConsumer.parentElement.classList.remove("active");
+  //   }
+  // }
   
   
 }

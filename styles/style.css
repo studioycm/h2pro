@@ -159,7 +159,7 @@ input {
   opacity: 1;
 }
 
-.definitions-calculator-developer {
+/* .definitions-calculator-developer {
   display: block;
 }
 
@@ -172,6 +172,15 @@ input {
 }
 
 .definitions-calculator-consumer.active {
+  display: block;
+} */
+
+.definitions-calculator-consumer,
+.definitions-calculator-developer {
+  display: none;
+}
+.definitions-calculator-consumer.active,
+.definitions-calculator-developer.active {
   display: block;
 }
 
@@ -568,7 +577,7 @@ input {
   gap: 80px;
   justify-content: space-between;
 }
-.definitions-graph-developer {
+/* .definitions-graph-developer {
   display: flex;
   gap: 80px;
   justify-content: space-between;
@@ -576,14 +585,15 @@ input {
 
 .definitions-graph-developer.active {
   display: none;
-}
-
+} */
+.definitions-graph-developer,
 .definitions-graph-consumer {
   display: none;
   gap: 80px;
   justify-content: space-between;
 }
 
+.definitions-graph-developer.active,
 .definitions-graph-consumer.active {
   display: flex;
 }
