@@ -6,6 +6,7 @@ const convKWH = 1 / convPCmod;
 const developerProfitModifier = 20;
 const consumerProfitModifier = 0.001;
 const maxValueCapacity = 8760;
+const barLabelMaxHeight = 80; // in percentage
 
 // DOM elements
 const valueSize = document.getElementById("track1");
@@ -111,16 +112,6 @@ function updateBarsAndLabels() {
   const calcConsumerEtac = calculateConsumerEtac(Number(valueHydrogenConsumer.value));
   const calcConsumerProfits = calculateConsumerProfits(calcConsumerConventional, calcConsumerEtac, Number(valueCostElectricity.value));
 
-  
-
-  // const developerConventionalHeight = Math.max(5, (calcDeveloperConventional / maxEtacCalc) * 100);
-  // const developerEtacHeight = Math.max(15, (calcDeveloperEtac / maxEtacCalc) * 100);
-  // const developerProfitsHeight = Math.max(20, (calcDeveloperProfits / ((maxEtacCalc - maxConvCalc) * valueHydrogen.getAttribute("max") * developerProfitModifier)) * 100);
-
-  // const consumerConventionalHeight = Math.max(15, (calcConsumerConventional / (valueHydrogenConsumer.getAttribute("max") * convPCmod)) * 100);
-  // const consumerEtacHeight = Math.max(5, (calcConsumerEtac / (valueHydrogenConsumer.getAttribute("max") * eTacPCmod)) * 100);
-  // const consumerProfitsHeight = Math.max(20, (calcConsumerProfits / ((valueHydrogenConsumer.getAttribute("max") * convPCmod - valueHydrogenConsumer.getAttribute("max") * eTacPCmod) * valueCostElectricity.max * consumerProfitModifier)) * 100);
-
   const etacHeightPercentage = etacMinHeight + ((calcDeveloperEtac - etacMinValue) / (etacMaxValue - etacMinValue)) * (etacMaxHeight - etacMinHeight);
   const conventionalHeightPercentage = ( conventionalMinHeight + ((calcDeveloperConventional - conventionalMinValue) / (conventionalMaxValue - conventionalMinValue)) * (conventionalMaxHeight - conventionalMinHeight) ) + conventionalHeightMod;
   const profitHeightPercentage = profitMinHeight + ((calcDeveloperProfits - profitMinValue) / (profitMaxValue - profitMinValue)) * (profitMaxHeight - profitMinHeight);
@@ -153,14 +144,13 @@ function updateBarsAndLabels() {
   console.log("conventional less then 30:" + calc);
  
   // move the bar label above or below top of the bar for all three bars based on the height of the highest bar
-  // check if the max percentage height out of the three bars is below 60% and if so, move the label above the bar by adding "active" class for all three bars
-  // if the max percentage height out of the three bars is above 60%, remove the "active" class for all three bars
+  // check if the max percentage height out of the three bars is below 80% and if so, move the label above the bar by adding "active" class for all three bars
+  // if the max percentage height out of the three bars is above 80%, remove the "active" class for all three bars
 
-  // check if max between etac and profit is below 60% and if so, move the label above the bar by adding "active" class for all three bars
   // if developerGraph have class "active" then set maxBarHeight to max between developer etac and developer profit, else set maxBarHeight to max between consumer conventional and consumer profit
   const maxBarHeight = developerGraph.classList.contains("active") ? Math.max(etacHeightPercentage, profitHeightPercentage) : Math.max(conventionalHeightPercentageConsumer, profitHeightPercentageConsumer);
   console.log("maxBarHeight = " + maxBarHeight);
-  if (maxBarHeight < 60) {
+  if (maxBarHeight < barLabelMaxHeight ) {
     // better efficiant way to add class to all three bars only if it not already added
     document.querySelectorAll(".definitions-graph > .active .bar-label").forEach(el => {
       if (!el.classList.contains("active")) {
