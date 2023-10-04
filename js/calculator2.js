@@ -148,7 +148,7 @@ function updateBarsAndLabels() {
   const maxBarHeight = developerGraph.classList.contains("active") ? Math.max(etacHeightPercentage, profitHeightPercentage) : Math.max(conventionalHeightPercentageConsumer, profitHeightPercentageConsumer);
   const minBarHeight = developerGraph.classList.contains("active") ? Math.min(conventionalHeightPercentage, profitHeightPercentage) : Math.min(etacHeightPercentageConsumer, profitHeightPercentageConsumer);
   console.log("minBarHeight = " + minBarHeight);
-  if (minBarHeight <= barLabelPositionTrigger || maxBarHeight <= barLabelPositionTrigger ) {
+  if (minBarHeight < barLabelPositionTrigger || maxBarHeight < barLabelPositionTrigger ) {
     
     document.querySelectorAll(".definitions-graph > .active .bar-label").forEach(el => {
       if (!el.classList.contains("active")) {
