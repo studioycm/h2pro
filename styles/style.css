@@ -50,6 +50,10 @@ section {
   background: #ffffff;
 }
 
+.page-section {
+  scroll-margin-top:50px;
+}
+
 section > h2 {
   padding: 0;
   margin: 0;
