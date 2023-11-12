@@ -2825,6 +2825,7 @@ section > h2 {
             }
             .div-141 {
             align-self: stretch;
+            max-width: 900px;
             }
             @media (max-width: 991px) {
             .div-141 {
