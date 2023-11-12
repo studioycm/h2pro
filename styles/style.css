@@ -976,6 +976,12 @@ section > h2 {
             width: 378px;
             height: 69px;
             flex-direction: column;
+            color: #1D380C;
+            font-family: Geologica;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%; /* 48px */
             }
             @media (max-width: 991px) {
             .div-18 {
