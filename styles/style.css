@@ -3702,6 +3702,9 @@ section > h2 {
                 padding: 100px 20px;
             }
             }
+            .div-190 div.img img {
+                width: 100%;
+            }
             .div-191 {
             position: relative;
             color: #fff;
