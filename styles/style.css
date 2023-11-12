@@ -796,7 +796,7 @@ section > h2 {
             width: 100%;
             max-width: 1720px;
             flex-direction: column;
-            padding: 20px 20px 0px;
+            padding: 40px 20px 0px;
             }
             @media (max-width: 991px) {
             .div-3 {
@@ -839,7 +839,7 @@ section > h2 {
             flex-grow: 0;
             flex-basis: 0%;
             flex-direction: column;
-            padding: 11px 20px;
+            padding: 10px 30px;
             }
             @media (max-width: 991px) {
             .div-5 {
@@ -852,7 +852,7 @@ section > h2 {
                 margin-left: 10px;
                 width: 100%;
                 justify-content: flex-start;
-                gap: 30px;
+                gap: 20px;
                 flex-direction: row;
                 flex-wrap: nowrap;            
             }
@@ -959,7 +959,7 @@ section > h2 {
             align-self: stretch;
             flex-grow: 1;
             align-items: center;
-            padding: 19px 20px;
+            padding: 10px 20px;
             font: 400 18px Geologica, sans-serif;
             }
             @media (max-width: 991px) {
