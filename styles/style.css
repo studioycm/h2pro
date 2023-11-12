@@ -796,7 +796,7 @@ section > h2 {
             width: 100%;
             max-width: 1720px;
             flex-direction: column;
-            padding: 0 20px;
+            padding: 20px 20px 0px;
             }
             @media (max-width: 991px) {
             .div-3 {
@@ -968,26 +968,25 @@ section > h2 {
             }
             }
             .div-18 {
-            border-radius: 0px 35px 35px 35px;
-            background: linear-gradient(
-                79deg,
-                #39aa4b -20.68%,
-                #72be44 30.9%,
-                #8bdf58 81.41%
-                ),
-                rgba(0, 255, 224, 1);
-            align-self: start;
-            display: flex;
-            margin-top: 149px;
-            width: 378px;
-            height: 69px;
-            flex-direction: column;
-            color: #1D380C;
-            font-family: Geologica;
-            font-size: 40px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 120%; /* 48px */
+                border-radius: 0px 35px 35px 35px;
+                background: linear-gradient( 79deg, #39aa4b -20.68%, #72be44 30.9%, #8bdf58 81.41% ), rgba(0, 255, 224, 1);
+                align-self: start;
+                display: flex;
+                margin-top: 149px;
+                width: auto;
+                height: 69px;
+                padding: 10px 30px;
+                flex-direction: row;
+                color: #1D380C;
+                font-family: Geologica;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 120%;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                flex-wrap: nowrap;
             }
             @media (max-width: 991px) {
             .div-18 {
