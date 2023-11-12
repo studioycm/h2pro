@@ -4309,6 +4309,9 @@ section > h2 {
                 width: 100%;
             }
             }
+            .column-29 > div img + img {
+                margin-top: 36px;
+            }
             .div-226 {
             display: flex;
             margin-top: 153px;
