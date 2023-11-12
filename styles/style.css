@@ -2084,8 +2084,9 @@ section > h2 {
                 ),
                 linear-gradient(79deg, #2fb219 -20.68%, #8bdf58 80.36%);
             align-self: center;
-            margin-top: 41px;
-            width: 217px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            min-width: 217px;
             max-width: 100%;
             padding: 14px 20px;
             font: 400 18px/130% Geologica, sans-serif;
